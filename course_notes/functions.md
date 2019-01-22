@@ -154,3 +154,51 @@ import math # Imports the math module
 everything = dir(math) # Sets everything to a list of things from math
 print everything # Prints 'em all!
 ```
+
+### On Beyond Strings
+
+Now that you understand what functions are and how to import modules, let's look at some of the functions that are built in to Python (no modules required!).
+
+You already know about some of the built-in functions we've used with strings, such as .upper(), .lower(), str(), and len(). These are great for doing work with strings, but what about something a little more analytic?
+
+1. What do you think the code in the editor will do? Click Run when you think you have an idea.
+
+```python
+def biggest_number(*args):
+  print max(args)
+  return max(args)
+    
+def smallest_number(*args):
+  print min(args)
+  return min(args)
+
+def distance_from_zero(arg):
+  print abs(arg)
+  return abs(arg)
+
+biggest_number(-10, -5, 5, 10)
+smallest_number(-10, -5, 5, 10)
+distance_from_zero(-10)
+```
+
+### max()
+
+The max() function takes any number of arguments and returns the largest one. ("Largest" can have odd definitions here, so it's best to use max() on integers and floats, where the results are straightforward, and not on other objects, like strings.)
+
+For example, max(1,2,3) will return 3 (the largest number in the set of arguments).
+
+1. Try out the max() function on line 3 of the editor. You can provide any number of integer or float arguments to max().
+```python
+maximum = max(30,24,10)
+print maximum #30
+```
+
+### min() 
+
+min() then returns the smallest of a given series of arguments.
+
+1. Go ahead and set minimum equal to the min() of any set of integers or floats you'd like.
+```python
+minimum = min(30,24,10)
+print minimum #10
+```
