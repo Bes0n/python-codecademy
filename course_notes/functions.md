@@ -253,3 +253,6 @@ def shut_down(s):
   else:
     return "Sorry"
 ```
+
+### Review: Built-In Functions
+Perfect! Last but not least, let's review the built-in functions you've learned about in this lesson.
