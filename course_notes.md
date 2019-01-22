@@ -21,7 +21,7 @@ meal_with_tax = tax(meal_cost)
 meal_with_tip = tip(meal_with_tax)
 ```
 
-###### Parameters and Arguments
+### Parameters and Arguments
 
 * When defining a function, placeholder variables are called parameters.
 * When using, or calling, a function, inputs into the function are called arguments.
@@ -39,4 +39,21 @@ def power(base, exponent):  # Add your parameters here!
   print "%d to the power of %d is %d." % (base, exponent, result)
 
 power(37, 4)  # Add your arguments here!
+```
+
+### Functions Calling Functions
+
+Let's look at the two functions in the editor: one_good_turn (which adds 1 to the number it takes in as an argument) and deserves_another (which adds 2).
+
+Change the body of deserves_another so that it always adds 2 to the output of one_good_turn.
+
+```python
+def one_good_turn(n):
+  return n + 1
+    
+def deserves_another(n):
+  return one_good_turn(n) + 2
+
+print(one_good_turn(2)) #return 3
+print(deserves_another(2)) #return 5
 ```
