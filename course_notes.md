@@ -27,7 +27,8 @@ meal_with_tip = tip(meal_with_tax)
 * When using, or calling, a function, inputs into the function are called arguments.
 
 ```
-Check out the function in the editor, power. It should take two arguments, a base and an exponent, and raise the first to the power of the second. It's currently broken, however, because its parameters are missing.
+Check out the function in the editor, power. It should take two arguments, a base and an exponent, 
+and raise the first to the power of the second. It's currently broken, however, because its parameters are missing.
 
 Replace the ___s with the parameters base and exponent and then call the power function with a base of 37 and an exponent of 4.
 ```
