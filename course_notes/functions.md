@@ -2,7 +2,6 @@
 ### What Good are Functions?
 
 You might have considered the situation where you would like to reuse a piece of code, just with a few different values. Instead of rewriting the whole code, it's much cleaner to define a function, which can then be used repeatedly.
-
 ```python
 def tax(bill):
   """Adds 8% tax to a restaurant bill."""
@@ -30,8 +29,6 @@ meal_with_tip = tip(meal_with_tax)
 and raise the first to the power of the second. It's currently broken, however, because its parameters are missing.
 
 * Replace the _s with the parameters base and exponent and then call the power function with a base of 37 and an exponent of 4.
-
-
 ```python 
 def power(base, exponent):  # Add your parameters here!
   result = base ** exponent
@@ -45,7 +42,6 @@ power(37, 4)  # Add your arguments here!
 * Let's look at the two functions in the editor: one_good_turn (which adds 1 to the number it takes in as an argument) and deserves_another (which adds 2).
 
 * Change the body of deserves_another so that it always adds 2 to the output of one_good_turn.
-
 ```python
 def one_good_turn(n):
   return n + 1
@@ -68,7 +64,6 @@ print(deserves_another(2)) #return 5
 * if that number is divisible by 3, by_three should call cube(number) and return its result. Otherwise, by_three should return False.
 
 * Don't forget that if and else statements need a : at the end of that line!
-
 ```python
 def cube(number):
   return number ** 3
@@ -90,7 +85,6 @@ There is a Python module named math that includes a number of useful variables a
 
 * Type import math on line 2 in the editor.
 * Insert math. before sqrt() so that it has the form math.sqrt(). This tells Python not only to import math, but to get the sqrt() function from within math. Then hit Run to see what Python now knows.
-
 ```python
 # Ask Python to print sqrt(25) on line 3.
 import math
@@ -110,7 +104,6 @@ from module import function
 Now you can just type sqrt() to get the square root of a number—no more math.sqrt()!
 
 1. Let's import only the sqrt function from math this time. (You don't need the () after sqrt in the from math import sqrt bit.)
-
 ```python
 from math import sqrt
 
@@ -124,13 +117,11 @@ Great! We've found a way to handpick the variables and functions we want from mo
 What if we still want all of the variables and functions in a module but don't want to have to constantly type math.?
 
 Universal import can handle this for you. The syntax for this is:
-
 ```python
 from module import *
 ```
 
 1. Use the power of from module import * to import everything from the math module on line 3 of the editor.
-
 ```python
 from math import *
 ```
@@ -148,7 +139,6 @@ For these reasons, it's best to stick with either import module and type module.
 1. The code in the editor will show you everything available in the math module.
 
 Click Run to check it out (you'll see sqrt, along with some other useful things like pi, factorial, and trigonometric functions.
-
 ```python 
 import math # Imports the math module
 everything = dir(math) # Sets everything to a list of things from math
@@ -162,7 +152,6 @@ Now that you understand what functions are and how to import modules, let's look
 You already know about some of the built-in functions we've used with strings, such as .upper(), .lower(), str(), and len(). These are great for doing work with strings, but what about something a little more analytic?
 
 1. What do you think the code in the editor will do? Click Run when you think you have an idea.
-
 ```python
 def biggest_number(*args):
   print max(args)
@@ -201,4 +190,66 @@ min() then returns the smallest of a given series of arguments.
 ```python
 minimum = min(30,24,10)
 print minimum #10
+```
+
+### abs() 
+
+The abs() function returns the absolute value of the number it takes as an argument—that is, that number's distance from 0 on an imagined number line. For instance, 3 and -3 both have the same absolute value: 3. The abs() function always returns a positive value, and unlike max() and min(), it only takes a single number.
+
+1. Set absolute equal to the absolute value of -42 on line 1.
+```python
+absolute = abs(-42)
+print absolute #42
+```
+
+### type()
+Finally, the type() function returns the type of the data it receives as an argument. If you ask Python to do the following:
+
+```python
+print type(42)
+print type(4.2)
+print type('spam')
+```
+Python will output: 
+```python
+<type 'int'>
+<type 'float'>
+<type 'str'>
+```
+
+1. Have Python print out the type of an int, a float, and a str string in the editor. You can pick any values on which to call type(), so long as they produce one of each.
+
+### Review: Functions
+
+Okay! Let's review functions.
+
+```python
+def speak(message):
+  return message
+
+if happy():
+  speak("I'm happy!")
+elif sad():
+  speak("I'm sad.")
+else:
+  speak("I don't know what I'm feeling.")
+```
+Again, the example code above is just there for your reference!
+
+1. First, def a function, shut_down, that takes one argument s. Don't forget the parentheses or the colon!
+
+* Then, if the shut_down function receives an s equal to "yes", it should return "Shutting down"
+
+* Alternatively, elif s is equal to "no", then the function should return "Shutdown aborted".
+
+* Finally, if shut_down gets anything other than those inputs, the function should return "Sorry"
+
+```python
+def shut_down(s):
+  if s == "yes":
+    return "Shutting down"
+  elif s == "no":
+    return "Shutdown aborted"
+  else:
+    return "Sorry"
 ```
