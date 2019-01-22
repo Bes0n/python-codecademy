@@ -1,7 +1,7 @@
 
 ### What Good are Functions?
 
-*You might have considered the situation where you would like to reuse a piece of code, just with a few different values. Instead of rewriting the whole code, it's much cleaner to define a function, which can then be used repeatedly.
+You might have considered the situation where you would like to reuse a piece of code, just with a few different values. Instead of rewriting the whole code, it's much cleaner to define a function, which can then be used repeatedly.
 
 ```python
 def tax(bill):
@@ -23,8 +23,8 @@ meal_with_tip = tip(meal_with_tax)
 
 ### Parameters and Arguments
 
-*When defining a function, placeholder variables are called parameters.
-*When using, or calling, a function, inputs into the function are called arguments.
+1. When defining a function, placeholder variables are called parameters.
+2. When using, or calling, a function, inputs into the function are called arguments.
 
 * Check out the function in the editor, power. It should take two arguments, a base and an exponent, 
 and raise the first to the power of the second. It's currently broken, however, because its parameters are missing.
