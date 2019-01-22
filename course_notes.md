@@ -26,12 +26,12 @@ meal_with_tip = tip(meal_with_tax)
 * When defining a function, placeholder variables are called parameters.
 * When using, or calling, a function, inputs into the function are called arguments.
 
-```
+
 Check out the function in the editor, power. It should take two arguments, a base and an exponent, 
 and raise the first to the power of the second. It's currently broken, however, because its parameters are missing.
 
-Replace the ___s with the parameters base and exponent and then call the power function with a base of 37 and an exponent of 4.
-```
+Replace the _s with the parameters base and exponent and then call the power function with a base of 37 and an exponent of 4.
+
 
 ```python 
 def power(base, exponent):  # Add your parameters here!
