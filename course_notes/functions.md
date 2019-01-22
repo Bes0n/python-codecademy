@@ -1,7 +1,7 @@
 
 ### What Good are Functions?
 
-You might have considered the situation where you would like to reuse a piece of code, just with a few different values. Instead of rewriting the whole code, it's much cleaner to define a function, which can then be used repeatedly.
+*You might have considered the situation where you would like to reuse a piece of code, just with a few different values. Instead of rewriting the whole code, it's much cleaner to define a function, which can then be used repeatedly.
 
 ```python
 def tax(bill):
@@ -23,14 +23,13 @@ meal_with_tip = tip(meal_with_tax)
 
 ### Parameters and Arguments
 
-* When defining a function, placeholder variables are called parameters.
-* When using, or calling, a function, inputs into the function are called arguments.
+*When defining a function, placeholder variables are called parameters.
+*When using, or calling, a function, inputs into the function are called arguments.
 
-
-Check out the function in the editor, power. It should take two arguments, a base and an exponent, 
+* Check out the function in the editor, power. It should take two arguments, a base and an exponent, 
 and raise the first to the power of the second. It's currently broken, however, because its parameters are missing.
 
-Replace the _s with the parameters base and exponent and then call the power function with a base of 37 and an exponent of 4.
+* Replace the _s with the parameters base and exponent and then call the power function with a base of 37 and an exponent of 4.
 
 
 ```python 
@@ -43,9 +42,9 @@ power(37, 4)  # Add your arguments here!
 
 ### Functions Calling Functions
 
-Let's look at the two functions in the editor: one_good_turn (which adds 1 to the number it takes in as an argument) and deserves_another (which adds 2).
+* Let's look at the two functions in the editor: one_good_turn (which adds 1 to the number it takes in as an argument) and deserves_another (which adds 2).
 
-Change the body of deserves_another so that it always adds 2 to the output of one_good_turn.
+* Change the body of deserves_another so that it always adds 2 to the output of one_good_turn.
 
 ```python
 def one_good_turn(n):
