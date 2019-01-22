@@ -10,8 +10,7 @@ Mad Libs require:
     Words from the player to fill in those blanks.
 
 
-"Roses are Red" poem example:
-[image]https://s3.amazonaws.com/codecademy-content/courses/learn-python/madlibs.svg
+"Roses are Red" poem example
 
 
 For this project, we have provided the story, but it will be up to you to complete the following:
@@ -22,3 +21,4 @@ For this project, we have provided the story, but it will be up to you to comple
 Let's begin!
 
 """
+
