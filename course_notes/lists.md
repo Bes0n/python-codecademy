@@ -76,14 +76,10 @@ letters.append('d')
 print len(letters)
 print letters
 ```
-
-    1. In the above example, we first create a list called letters.
-    2. Then, we add the string 'd' to the end of the letters list.
-    3. Next, we print out 4, the length of the letters list.
-    4. Finally, we print out ['a', 'b', 'c', 'd'].
-
-
 <li>In the above example, we first create a list called <code>letters</code>.</li>
 <li>Then, we add the string <code>'d'</code> to the end of the <code>letters</code> list.</li>
 <li>Next, we print out <code>4</code>, the length of the <code>letters</code> list.</li>
 <li>Finally, we print out <code>['a', 'b', 'c', 'd']</code>.</li>
+
+1. <p>On lines 5, 6, and 7, append three <em>more</em> items to the <code>suitcase</code> list, just like the second line of the example above. (Maybe bring a bathing suit?) </p>
+<p>Then, set <code>list_length</code> equal to the length of the <code>suitcase</code> list.</p>
