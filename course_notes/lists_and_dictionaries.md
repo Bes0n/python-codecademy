@@ -257,3 +257,87 @@ print(square_list)
 #output 
 [1.0, 4.0, 9.0, 16.0, 25.0]
 ```
+
+### This Next Part is Key
+<p>A dictionary is similar to a list, but you access values by looking up a <em>key</em> instead of an index. A key can be any string or number.  Dictionaries are enclosed in curly braces, like so:</p>
+
+```python
+d = {'key1' : 1, 'key2' : 2, 'key3' : 3}
+```
+
+<p>This is a dictionary called <code>d</code> with three <em>key-value pairs</em>. The key <code>'key1'</code> points to the value <code>1</code>, <code>'key2'</code> to <code>2</code>, and so on.</p>
+<p>Dictionaries are great for things like phone books (pairing a name with a phone number), login pages (pairing an e-mail address with a  username), and more!</p>
+
+1. <p>Print the values stored under the <code>'Sloth'</code> and <code>'Burmese Python'</code> <em>keys</em>. Accessing dictionary values by key is just like accessing list values by index:</p>
+
+```python
+residents['Puffin']# Gets the value 104
+```
+
+```python
+# Assigning a dictionary with three key-value pairs to residents:
+residents = {'Puffin' : 104, 'Sloth' : 105, 'Burmese Python' : 106}
+
+print residents['Puffin'] # Prints Puffin's room number
+
+# Your code here!
+print residents['Sloth']
+print residents['Burmese Python']
+```
+
+### New Entries
+<p>Like Lists, Dictionaries are <em>mutable</em>. This means they can be changed after they are created. One advantage of this is that we can add new <em>key/value pairs</em> to the dictionary after it is created like so:</p>
+
+```python
+dict_name[new_key] = new_value
+```
+
+<p>An empty pair of curly braces <code>{}</code> is an empty dictionary, just like an empty pair of <code>[]</code> is an empty list.</p>
+
+<p>The length <code>len()</code> of a dictionary is the number of key-value pairs it has. Each pair counts only once, even if the value is a list. (That's right: you can put lists <em>inside</em> dictionaries!)</p>
+
+1. <p>Add at least three more key-value pairs to the <code>menu</code> variable, with the dish name (as a <code>"string"</code>) for the key and the price (a float or integer) as the value. Here's an example:</p>
+
+```python 
+menu['Spam'] = 2.50
+```
+
+```python 
+menu = {} # Empty dictionary
+menu['Chicken Alfredo'] = 14.50 # Adding new key-value pair
+print menu['Chicken Alfredo']
+
+# Your code here: Add some dish-price pairs to menu!
+menu['Shaurma Mamed'] = 4.99
+menu['Deve Kutabi'] = 9.59
+menu['Kosicka cheese'] = 6.00
+
+print "There are " + str(len(menu)) + " items on the menu."
+print menu
+
+#output
+14.5
+There are 4 items on the menu.
+{'Chicken Alfredo': 14.5, 'Deve Kutabi': 9.59, 'Shaurma Mamed': 4.99, 'Kosicka cheese': 6.0}
+```
+
+### Changing Your Mind 
+<p>Because dictionaries are mutable, they can be changed in many ways. Items can be removed from a dictionary with the <code>del</code> command:</p>
+
+```python
+del dict_name[key_name]
+``` 
+
+<p>will remove the key <code>key_name</code> and its associated value from the dictionary.</p>
+<p>A new value can be associated with a key by assigning a value to the key, like so:</p>
+
+```python
+dict_name[key] = new_value
+```
+
+1. <p>Delete the <code>'Sloth'</code> and <code>'Bengal Tiger'</code> items from <code>zoo_animals</code> using <code>del</code>.</p>
+   <p>Set the value associated with <code>'Rockhopper Penguin'</code> to anything other than <code>'Arctic Exhibit'</code>.</p>
+   
+```python
+
+```
