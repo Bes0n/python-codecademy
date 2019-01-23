@@ -83,3 +83,54 @@ print letters
 
 1. <p>On lines 5, 6, and 7, append three <em>more</em> items to the <code>suitcase</code> list, just like the second line of the example above. (Maybe bring a bathing suit?) </p>
    <p>Then, set <code>list_length</code> equal to the length of the <code>suitcase</code> list.</p>
+
+```python
+suitcase = [] 
+suitcase.append("sunglasses")
+
+# Your code here!
+suitcase.append("weed")
+suitcase.append("ak-47")
+suitcase.append("vodka")
+
+list_length = len(suitcase) # Set this to the length of suitcase
+
+print "There are %d items in the suitcase." % (list_length)
+print suitcase
+```
+
+### List Slicing
+
+Sometimes, you only want to access a portion of a list. Consider the following code:
+```python
+letters = ['a', 'b', 'c', 'd', 'e']
+slice = letters[1:3]
+print slice
+print letters
+```
+What is this code doing?
+<p>First, we create a list called <code>letters</code>.</p>
+<p>Then, we take a subsection of the list and store it in the <code>slice</code> list. We do this by defining the indices we want to include after the name of the list: <code>letters[1:3]</code>.  In Python, when we specify a portion of a list in this manner, we <strong>include</strong> the element with the first index, <code>1</code>, but we <strong>exclude</strong> the element with the second index, <code>3</code>.</p>
+<p>Next, we print out <code>slice</code>, which will print <code>['b','c']</code>. Remember, in Python indices always start at <code>0</code>, so the <code>1</code> element is actually <code>b</code>.</p>
+<p>Finally, we print out <code>['a', 'b', 'c', 'd', 'e']</code>, notice that we did not modify the original <code>letters</code> list.</p>
+
+1. <p>On line 7, create a list called <code>middle</code> containing only the two middle items from <code>suitcase</code>.</p>
+   <p>On line 10, create a list called <code>last</code> made up only of the last two items from <code>suitcase</code>.</p>
+   
+```python
+suitcase = ["sunglasses", "hat", "passport", "laptop", "suit", "shoes"]
+
+first = suitcase[0:2]
+print(first)
+
+middle = suitcase[2:4]
+print(middle)
+
+last = suitcase[4:6]
+print(last)
+
+#Output
+['sunglasses', 'hat']
+['passport', 'laptop']
+['suit', 'shoes']
+```
