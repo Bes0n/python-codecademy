@@ -360,3 +360,56 @@ print zoo_animals
 #output
 """ {'Atlantic Puffin': 'Arctic Exhibit', 'Rockhopper Penguin': 'North Face'} """
 ```
+
+### Remove a Few Things
+Sometimes you need to remove something from a list.
+
+```python 
+beatles = ["john","paul","george","ringo","stuart"]
+beatles.remove("stuart")
+print beatles
+```
+This code will print:
+
+```python
+ ["john","paul","george","ringo"]
+```
+
+<ol>
+<li>We create a list called <code>beatles</code> with 5 strings.</li>
+<li>Then, we remove the first item from <code>beatles</code> that matches the string <code>"stuart"</code>. Note that <code>.remove(item)</code> does not return anything.</li>
+<li>Finally, we print out that list just to see that <code>"stuart"</code> was actually removed.</li>
+</ol>
+
+1. <p>Remove <code>'dagger'</code> from the list of items stored in the <code>backpack</code> variable.</p>
+
+```python 
+backpack = ['xylophone', 'dagger', 'tent', 'bread loaf']
+
+backpack.remove('dagger')
+```
+
+### It's Dangerous to Go Alone! Take This
+<p>Let's go over a few last notes about <em>dictionaries</em></p>
+
+```python
+my_dict = {
+  "fish": ["c", "a", "r", "p"],
+  "cash": -4483,
+  "luck": "good"
+}
+print my_dict["fish"][0]
+```
+
+<ol>
+<li>In the example above, we created a dictionary that holds many types of values.</li>
+<li>The key <code>"fish"</code> has a <em>list</em>, the key <code>"cash"</code> has an <em>int</em>, and the key <code>"luck"</code> has a <em>string</em>.</li>
+<li>Finally, we print the letter <code>"c"</code>. When we access a value in the dictionary like <code>my_dict["fish"]</code>, we have direct access to that value (which happens to be a list). We can access the item at index <code>0</code> in the list stored by the key <code>"fish"</code>.</li>
+</ol>
+
+1. <div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Add a key to <code>inventory</code> called <code>'pocket'</code></p>
+<p>Set the value of <code>'pocket'</code> to be a list consisting of the strings <code>'seashell'</code>, <code>'strange berry'</code>, and <code>'lint'</code></p>
+<p><code>.sort()</code> the items in the list stored under the <code>'backpack'</code> key</p>
+<p>Then <code>.remove('dagger')</code> from the list of items stored under the <code>'backpack'</code> key</p>
+<p>Add 50 to the number stored under the <code>'gold'</code> key</p>
+</div>
