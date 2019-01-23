@@ -198,3 +198,60 @@ print(duck_index)
 animals.insert(duck_index,"cobra")
 print animals # Observe what prints after the insert operation
 ```
+
+### For One and All
+<p>If you want to do something with every item in the list, you can use a <code>for</code> loop. If you've learned about <code>for</code> loops in JavaScript, pay close attention! They're different in Python.</p>
+
+```python
+for variable in list_name:
+  # Do stuff!
+```
+<p>A variable name follows the <code>for</code> keyword; it will be assigned the value of each list item in turn.</p>
+<p>Then <code>in list_name</code> designates <code>list_name</code> as the list the loop will work on. The line ends with a colon (<code>:</code>) and the indented code that follows it will be executed once per item in the list.</p>
+
+1. <p>Write a statement in the indented part of the <code>for</code>-loop that prints a number equal to <code>2 * number</code> for every list item.</p>
+
+```python 
+my_list = [1,9,3,8,5,7]
+
+for number in my_list:
+  # Your code here
+  print number * 2 
+```
+
+### More with 'for'
+
+<p>If your list is a jumbled mess, you may need to <code>sort()</code> it.</p>
+
+```python
+animals = ["cat", "ant", "bat"]
+animals.sort()
+
+for animal in animals:
+  print animal
+```
+
+<ol>
+<li>First, we create a list called <code>animals</code> with three strings. The strings are not in alphabetical order.</li>
+<li>Then, we sort <code>animals</code> into alphabetical order. Note that <code>.sort()</code> modifies the list rather than returning a new list.</li>
+<li>Then, for each item in <code>animals</code>, we print that item out as <code>"ant", "bat", "cat"</code> on their own line each.</li>
+</ol>
+
+1. <p>Write a <code>for</code>-loop that iterates over <code>start_list</code> and <code>.append()</code>s each number squared (<code>x ** 2</code>) to <code>square_list</code>.</p>
+   <p>Then sort <code>square_list</code>!</p>
+   
+```python
+from math import pow
+start_list = [5, 3, 1, 2, 4]
+square_list = []
+
+# Your code here!
+for n in start_list:
+  square_list.append(pow(n,2))
+  square_list.sort()
+
+print(square_list)
+
+#output 
+[1.0, 4.0, 9.0, 16.0, 25.0]
+```
