@@ -729,3 +729,35 @@ stock: 0
 ```
 
 <p>When you're printing, make sure to use the syntax from the example above, with <code>%s</code>.</p>
+
+```python
+prices = {"banana": 4,"apple": 2,"orange": 1.5,"pear": 3}
+
+stock = {"banana": 6, "apple": 0, "orange": 32, "pear": 15}
+
+for food in prices:
+  print food
+  print "price: %s" % prices[food]
+  print "stock: %s" % stock[food]
+  print ""
+```
+
+```
+#output
+
+orange
+price: 1.5
+stock: 32
+
+pear
+price: 3
+stock: 15
+
+banana
+price: 4
+stock: 6
+
+apple
+price: 2
+stock: 0
+```
