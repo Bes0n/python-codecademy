@@ -82,4 +82,4 @@ print letters
 <li>Finally, we print out <code>['a', 'b', 'c', 'd']</code>.</li>
 
 1. <p>On lines 5, 6, and 7, append three <em>more</em> items to the <code>suitcase</code> list, just like the second line of the example above. (Maybe bring a bathing suit?) </p>
-<p>Then, set <code>list_length</code> equal to the length of the <code>suitcase</code> list.</p>
+   <p>Then, set <code>list_length</code> equal to the length of the <code>suitcase</code> list.</p>
