@@ -413,3 +413,7 @@ print my_dict["fish"][0]
 <p>Then <code>.remove('dagger')</code> from the list of items stored under the <code>'backpack'</code> key</p>
 <p>Add 50 to the number stored under the <code>'gold'</code> key</p>
 </div>
+
+```python 
+
+```
