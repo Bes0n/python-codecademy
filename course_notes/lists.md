@@ -175,15 +175,26 @@ print animals.index("bat")
 <li>Then, we print the first index that contains the string <code>"bat"</code>, which will print <code>1</code>.</li>
 </ol>
 <p>We can also <code>insert</code> items into a list.</p>
+
 ```python
 animals.insert(1, "dog")
 print animals
 ```
+
 <ol>
 <li>We insert <code>"dog"</code> at index 1, which moves everything down by 1.</li>
 <li>We print out <code>["ant", "dog", "bat", "cat"]</code></li>
 </ol>
 
-<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Use the <code>.index(item)</code> function to find the index of  <code>"duck"</code>. Assign that result to a variable called <code>duck_index</code>.</p>
-<p>Then <code>.insert(index, item)</code> the string <code>"cobra"</code> at that index.</p>
-</div>
+1. <p>Use the <code>.index(item)</code> function to find the index of  <code>"duck"</code>. Assign that result to a variable called <code>duck_index</code>.</p>
+   <p>Then <code>.insert(index, item)</code> the string <code>"cobra"</code> at that index.</p>
+   
+```python 
+animals = ["aardvark", "badger", "duck", "emu", "fennec fox"]
+duck_index = animals.index("duck")
+print(duck_index)
+
+# Your code here!
+animals.insert(duck_index,"cobra")
+print animals # Observe what prints after the insert operation
+```
