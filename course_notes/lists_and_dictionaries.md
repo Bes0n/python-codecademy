@@ -530,7 +530,7 @@ print "We printed 7."
 
 Make sure to keep track of your indentation or you may get confused!
 
-**LESSON**
+###### LESSON
 1. <p>Like step 2 above, loop through each item in the list called <code>a</code>.</p>
    <p>Like step 3 above, <code>if</code> the number is even, <code>print</code> it out. You can test <code>if</code> the item <code>% 2 == 0</code> to help you out.</p>
    
@@ -577,7 +577,7 @@ print small
 <li>Finally, we print out the returned result, which is <code>2</code> since only <code>4</code> and <code>8</code> are less than 10.</li>
 </ol>
 
-**LESSON**
+###### LESSON
 1. <p>Write a function that counts how many times the string <code>"fizz"</code> appears in a list.</p>
    <ul>
 <li>Write a function called <code>fizz_count</code> that takes a list <code>x</code> as input.</li>
@@ -656,7 +656,7 @@ animal_counts = {
 
 <p>In the example above, we create a new dictionary called <code>animal_counts</code> with three entries. One of the entries has the key <code>"ant"</code> and the value <code>3</code>.</p>
 
-**LESSON**
+###### LESSON
 1. <p>Create a new dictionary called <code>prices</code> using <code>{}</code> format like the example above.</p>
    
    <p>Put these values in your <code>prices</code> dictionary, in between the <code>{}</code>:</p>
@@ -671,3 +671,24 @@ animal_counts = {
 ```
 
 <p>Yeah, this place is really expensive. (Your supermarket subsidizes the zoo from the last course.)</p>
+
+```python
+prices = {
+  "banana": 4,
+	"apple": 2,
+	"orange": 1.5,
+	"pear": 3
+}
+```
+
+### Investing in Stock 
+Good work! As a store manager, you’re also in charge of keeping track of your stock/inventory.
+
+###### LESSON
+
+1. <p>Create a <code>stock</code> dictionary with the values below.</p>
+
+<div class="CodeMirror"><span class="cm-string">"banana"</span>:<!-- --> <span class="cm-number">6</span>,<!-- -->
+<span class="cm-string">"apple"</span>:<!-- --> <span class="cm-number">0</span>,<!-- -->
+<span class="cm-string">"orange"</span>:<!-- --> <span class="cm-number">32</span>,<!-- -->
+<span class="cm-string">"pear"</span>:<!-- --> <span class="cm-number">15</span></div>
