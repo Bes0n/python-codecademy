@@ -134,3 +134,31 @@ print(last)
 ['passport', 'laptop']
 ['suit', 'shoes']
 ```
+
+### Slicing Lists and Strings
+
+<p>You can slice a string exactly like a list! In fact, you can think of strings as lists of characters: each character is a sequential item in the list, starting from index 0.</p>
+```python
+my_list[:2]
+# Grabs the first two items
+my_list[3:]
+# Grabs the fourth through last items
+```
+If your list slice includes the very first or last item in a list (or a string), the index for that item doesn't have to be included.
+
+1. <p>Assign to <code>dog</code> a slice of <code>animals</code> from index 3 up until <em>but not including</em> index 6.</p>
+   <p>Assign to <code>frog</code> a slice of <code>animals</code> from index 6 until the end of the string.</p>
+   
+```python 
+animals = "catdogfrog"
+
+# The first three characters of animals
+cat = animals[:3]
+print(cat)
+# The fourth through sixth characters
+dog = animals[3:6]
+print(dog)
+# From the seventh character to the end
+frog = animals[6:]
+print(frog)
+```
