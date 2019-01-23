@@ -472,3 +472,202 @@ Martine
 Columbus
 """
 ``` 
+
+### This is KEY!
+<p>You can also use a <code>for</code> loop on a dictionary to loop through its <em>keys</em> with the following:</p>
+
+```python
+# A simple dictionary
+d = {"foo" : "bar"}
+
+for key in d: 
+  print d[key]  # prints "bar"
+```
+
+<p>Note that dictionaries are <em>unordered</em>, meaning that any time you loop through a dictionary, you will go through <em>every</em> key, but you are not guaranteed to get them in any particular order.</p>
+
+1. <p>Use a <code>for</code> loop to go through the <code>webster</code> dictionary and print out all of the definitions.</p>
+
+```python
+webster = {
+  "Aardvark" : "A star of a popular children's cartoon show.",
+  "Baa" : "The sound a goat makes.",
+  "Carpet": "Goes on the floor.",
+  "Dab": "A small amount."
+}
+
+# Add your code below!
+for key in webster:
+  print(webster[key])
+  
+#Output
+"""
+A star of a popular children's cartoon show.
+Goes on the floor.
+A small amount.
+The sound a goat makes.
+"""
+```
+
+### Control Flow and Looping
+<p>The blocks of code in a <code>for</code> loop can be as big or as small as they need to be.</p>
+<p>While looping, you may want to perform different actions depending on the particular item in the list.</p>
+
+```python
+numbers = [1, 3, 4, 7]
+for number in numbers: 
+  if number > 6:
+    print number
+print "We printed 7."
+```
+
+<ol>
+<li>In the above example, we create a list with 4 numbers in it.</li>
+<li>Then we loop through the <code>numbers</code> list and store each item in the list in the variable <code>number</code>.</li>
+<li>On each loop, if <code>number</code> is greater than 6, we <code>print</code> it out. So, we print <code>7</code>.</li>
+<li>Finally, we print out a sentence.</li>
+</ol>
+
+Make sure to keep track of your indentation or you may get confused!
+
+**LESSON**
+1. <p>Like step 2 above, loop through each item in the list called <code>a</code>.</p>
+   <p>Like step 3 above, <code>if</code> the number is even, <code>print</code> it out. You can test <code>if</code> the item <code>% 2 == 0</code> to help you out.</p>
+   
+```python
+a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+for i in a: 
+  if i % 2 == 0:
+    print i
+
+#Output
+0
+2
+4
+6
+8
+10
+12
+```
+
+### Lists + Functions
+<p>Functions can also take <em>lists</em> as inputs and perform various operations on those lists.</p>
+
+```python 
+def count_small(numbers):
+  total = 0
+  for n in numbers:
+    if n < 10:
+      total = total + 1
+  return total
+
+lotto = [4, 8, 15, 16, 23, 42]
+small = count_small(lotto)
+print small
+```
+
+<ol>
+<li>In the above example, we define a function <code>count_small</code> that has one parameter, <code>numbers</code>.</li>
+<li>We initialize a variable <code>total</code> that we can use in the <code>for</code> loop.</li>
+<li>For each item <code>n</code> in <code>numbers</code>, if <code>n</code> is less than 10, we increment <code>total</code>.</li>
+<li>After the <code>for</code> loop, we return <code>total</code>.</li>
+<li>After the function definition, we create an array of numbers called <code>lotto</code>.</li>
+<li>We call the <code>count_small</code> function, pass in <code>lotto</code>, and store the returned result in <code>small</code>.</li>
+<li>Finally, we print out the returned result, which is <code>2</code> since only <code>4</code> and <code>8</code> are less than 10.</li>
+</ol>
+
+**LESSON**
+1. <p>Write a function that counts how many times the string <code>"fizz"</code> appears in a list.</p>
+   <ul>
+<li>Write a function called <code>fizz_count</code> that takes a list <code>x</code> as input.</li>
+<li>Create a variable <code>count</code> to hold the ongoing count. Initialize it to zero.</li>
+<li><code>for</code> each <code>item in x:</code>, <code>if</code> that item is equal to the string <code>"fizz"</code> then increment the <code>count</code> variable.</li>
+<li>After the loop, please <code>return</code> the <code>count</code> variable.</li>
+</ul>
+
+<p>For example, <code>fizz_count(["fizz","cat","fizz"])</code> should return <code>2</code>. </p>
+
+```python
+# Write your function below!
+def fizz_count(x):
+  count = 0
+  for i in x:
+    if i == 'fizz':
+      count += 1
+    else:
+      continue
+  return count
+
+print(fizz_count(["fizz","cat","fizz"]))
+
+#Output will be 2
+```
+
+### String Looping 
+<p>As we've mentioned, <em>strings</em> are like lists with <em>characters</em> as elements. You can loop through strings the same way you loop through lists! While we won't ask you to do that in this section, we've put an example in the editor of how looping through a string might work.</p>
+
+```python
+for letter in "Codecademy":
+  print letter
+    
+# Empty lines to make the output pretty
+print
+print
+
+word = "Programming is fun!"
+
+for letter in word:
+  # Only print out the letter i
+  if letter == "i":
+    print letter
+    
+#Output 
+"""
+C
+o
+d
+e
+c
+a
+d
+e
+m
+y
+
+
+i
+i
+"""
+```
+
+### Your Own Store!
+<p>Okay—on to the core of our project.</p>
+
+<p>Congratulations! You are now the proud owner of your very own Codecademy brand supermarket.</p>
+
+```python
+animal_counts = {
+  "ant": 3,
+  "bear": 6,
+  "crow": 2
+}
+``` 
+
+<p>In the example above, we create a new dictionary called <code>animal_counts</code> with three entries. One of the entries has the key <code>"ant"</code> and the value <code>3</code>.</p>
+
+**LESSON**
+1. <p>Create a new dictionary called <code>prices</code> using <code>{}</code> format like the example above.</p>
+   
+   <p>Put these values in your <code>prices</code> dictionary, in between the <code>{}</code>:</p>
+   
+```python
+"""
+"banana": 4,
+"apple": 2,
+"orange": 1.5,
+"pear": 3
+"""
+```
+
+<p>Yeah, this place is really expensive. (Your supermarket subsidizes the zoo from the last course.)</p>
