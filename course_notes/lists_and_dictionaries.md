@@ -688,7 +688,8 @@ Good work! As a store manager, you’re also in charge of keeping track of your 
 
 1. <p>Create a <code>stock</code> dictionary with the values below.</p>
 
-<div class="CodeMirror"><span class="cm-string">"banana"</span>:<!-- --> <span class="cm-number">6</span>,<!-- -->
+<code class="lang-py"><span language="py" class="CodeBlock__3-kebd7REMI5aXkez6K-B wrap__yxnEyEmMpigk6-3_Wvbzo defaults__1l9bk0Z91YqvzRByZKNgHF cc__1zsV8w8Rj_vs2ayVLJ-2x undefined" data-reactroot=""><div class="CodeMirror"><span class="cm-string">"banana"</span>:<!-- --> <span class="cm-number">6</span>,<!-- -->
 <span class="cm-string">"apple"</span>:<!-- --> <span class="cm-number">0</span>,<!-- -->
 <span class="cm-string">"orange"</span>:<!-- --> <span class="cm-number">32</span>,<!-- -->
-<span class="cm-string">"pear"</span>:<!-- --> <span class="cm-number">15</span></div>
+<span class="cm-string">"pear"</span>:<!-- --> <span class="cm-number">15</span></div></span>
+</code>
