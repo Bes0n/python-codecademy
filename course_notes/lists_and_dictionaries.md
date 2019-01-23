@@ -721,3 +721,11 @@ apple
 price: 2
 stock: 0
 ```
+
+<p>Like the example above, because you know that the <code>prices</code> and <code>stock</code> dictionary have the same keys, you can access the <code>stock</code> dictionary while you are looping through <code>prices</code>.</p>
+
+```python
+
+```
+
+<p>When you're printing, make sure to use the syntax from the example above, with <code>%s</code>.</p>
