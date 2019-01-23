@@ -434,3 +434,41 @@ inventory['backpack'].remove('dagger')
 inventory['gold'] += 50
 ```
 
+### BeFOR We Begin
+
+<p>Before we begin our exercise, we should go over the Python <code>for</code> loop one more time. For now, we are only going to go over the <code>for</code> loop in terms of how it relates to <em>lists</em> and <em>dictionaries</em>. We'll explain more cool <code>for</code> loop uses in later courses.</p>
+
+<p><code>for</code> loops allow us to iterate through all of the elements in a list from the left-most (or zeroth element) to the right-most element. A sample loop would be structured as follows: </p>
+
+```python
+a = ["List", "of", "some", "sort"]
+for x in a: 
+  # Do something for every x
+```
+
+<p>This loop will run all of the code in the indented block under the <code>for x in a:</code> statement. The item in the list that is currently being evaluated will be <code>x</code>.  So running the following:</p>
+
+```python
+for item in [1, 3, 21]: 
+  print item
+```
+
+<p>would print <code>1</code>, then <code>3</code>, and then <code>21</code>. The variable between <code>for</code> and <code>in</code> can be set to any variable name (currently <code>item</code>), but you should be careful to avoid using the word <code>list</code> as a variable, since that's a reserved word (that is, it means something special) in the Python language.</p>
+
+1. <p>Use a <code>for</code> loop to print out all of the elements in the list <code>names</code>.</p>
+
+```python 
+names = ["Adam","Alex","Mariah","Martine","Columbus"]
+
+for name in names:
+  print(name)
+  
+#Output: 
+"""
+Adam
+Alex
+Mariah
+Martine
+Columbus
+"""
+``` 
