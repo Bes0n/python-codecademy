@@ -339,5 +339,24 @@ dict_name[key] = new_value
    <p>Set the value associated with <code>'Rockhopper Penguin'</code> to anything other than <code>'Arctic Exhibit'</code>.</p>
    
 ```python
+# key - animal_name : value - location 
+zoo_animals = { 'Unicorn' : 'Cotton Candy House',
+'Sloth' : 'Rainforest Exhibit',
+'Bengal Tiger' : 'Jungle House',
+'Atlantic Puffin' : 'Arctic Exhibit',
+'Rockhopper Penguin' : 'Arctic Exhibit'}
+# A dictionary (or list) declaration may break across multiple lines
 
+# Removing the 'Unicorn' entry. (Unicorns are incredibly expensive.)
+del zoo_animals['Unicorn']
+
+# Your code here!
+del zoo_animals['Sloth']
+del zoo_animals['Bengal Tiger']
+zoo_animals['Rockhopper Penguin'] = 'North Face'
+
+print zoo_animals
+
+#output
+""" {'Atlantic Puffin': 'Arctic Exhibit', 'Rockhopper Penguin': 'North Face'} """
 ```
