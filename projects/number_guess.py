@@ -29,23 +29,23 @@ def roll_dice(number_of_sides):
   second_roll = randint(1, int(number_of_sides))
   #On the next line, create a variable called max_val and set it equal to number_of_sides times 2 (since there are two dice).
   max_val = number_of_sides * 2
-  print "Max possible value: %d" % (max_val)
+  print("Max possible value: %d" % (max_val))
   #On the next line, call the get_user_guess() function. Remember that the function will return the user's guess after prompting the user.
 	#Store the returned value into a variable called guess.
   guess = get_user_guess()
   if guess > max_val:
-    print "Your guess is greater that the maximum value."
+    print("Your guess is greater that the maximum value.")
   else:
     print "Rolling..."
     sleep(2)
     #Print roll numbers 
-    print "First roll gave number: %d" % (first_roll)
+    print("First roll gave number: %d" % (first_roll))
     sleep(1)
-    print "Second roll gave number: %d" % (second_roll)
+    print("Second roll gave number: %d" % (second_roll))
     sleep(1)
     #get total of first and second roll 
     total_roll = first_roll + second_roll
-    print "Total roll is %d" % (total_roll)
+    print("Total roll is %d" % (total_roll))
     print "Result..."
     sleep(1)
     #if you guessed number right - you won, else you lost
