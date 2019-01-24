@@ -142,3 +142,42 @@ Tyler
 [100.0, 100.0]
 """
 ```
+
+### It's Okay to be Average
+When teaching a class, it's important to take the students' averages in order to assign grades.
+
+```python
+5 / 2
+# 2
+
+5.0 / 2
+# 2.5
+
+float(5) / 2
+# 2.5
+```
+
+The above example is a reminder of how division works in Python.
+<ul>
+<li>When you divide an integer by another integer, the result is always an integer (rounded down, if needed).</li>
+<li>When you divide a float by an integer, the result is always a float.</li>
+<li>To divide two integers and end up with a float, you must first use <code>float()</code> to convert one of the integers to a float.</li>
+</ul>
+
+###### TASK
+<p>Write a function <code>average</code> that takes a list of numbers and returns the average.</p>
+<ul>
+<li>Define a function called <code>average</code> that has one argument, <code>numbers</code>.</li>
+<li>Inside that function, call the built-in <code>sum()</code> function with the <code>numbers</code> list as a parameter. Store the result in a variable called <code>total</code>.</li>
+<li>Like the example above, use <code>float()</code> to convert <code>total</code> and store the result in <code>total</code>.</li>
+<li>Divide <code>total</code> by the length of the <code>numbers</code> list. Use the built-in <code>len()</code> function to calculate that.</li>
+<li>Return that result.</li>
+</ul>
+
+```python
+def average(numbers):
+  total = sum(numbers)
+  total = float(total) / len(numbers)
+  return total
+```
+
