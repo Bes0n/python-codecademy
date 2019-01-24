@@ -9,7 +9,7 @@ The program should do the following:
     Determine the winner (user or computer).
 Let's begin! """
 
-#To make sure that the rolls are random, we will need some Python code that isn't built-in  we need to import the randint function, from the random module.
+#To make sure that the rolls are random, we will need some Python code that isn't built-in  we need to import the randint function,from the random module.
 from random import randint 
 
 #You'll also need to import more code that will be used to simulate dice rolls.
