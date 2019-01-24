@@ -14,7 +14,7 @@ print animal["name"]
 
 <p>The example above is just to remind you how to create a dictionary and then to access the item stored by the <code>"name"</code> key.</p>
 
-###### LESSON
+###### TASK
 <div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Create three dictionaries: <code>lloyd</code>, <code>alice</code>, and <code>tyler</code>.  </p>
 <p>Give each dictionary the keys <code>"name"</code>, <code>"homework"</code>, <code>"quizzes"</code>, and <code>"tests"</code>.  </p>
 <p>Have the "name" key be the name of the student (that is, <code>lloyd</code>'s name should be <code>"Lloyd"</code>) and the other keys should be an empty list (We'll fill in these lists soon!)</p>
@@ -65,10 +65,64 @@ my_list = [1, 2, 3]
 
 <p>The above example is just a reminder on how to create a list. Afterwards, <code>my_list</code> contains <code>1</code>, <code>2</code>, and <code>3</code>.</p>
 
-###### LESSON
+###### TASK
 
 <p>Below your code, create a list called <code>students</code> that contains <code>lloyd</code>, <code>alice</code>, and <code>tyler</code>.</p>
 
 ```python 
 students = [lloyd, alice, tyler]
+```
+
+### For the Record
+Excellent. Now you need a hard copy document with all of your students' grades.
+
+```python 
+animal_sounds = {
+  "cat": ["meow", "purr"],
+  "dog": ["woof", "bark"],
+  "fox": [],
+}
+print animal_sounds["cat"]
+```
+
+<p>The example above is just to remind you how to create a dictionary and then to access the item stored by the <code>"cat"</code> key.</p>
+
+###### TASK
+
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p><code>for</code> each <code>student</code> in your <code>students</code> list, print out that <code>student</code>'s data, as follows:</p>
+<ul>
+<li><code>print</code> the <code>student</code>'s <code>name</code></li>
+<li><code>print</code> the <code>student</code>'s <code>homework</code></li>
+<li><code>print</code> the <code>student</code>'s <code>quizzes</code></li>
+<li><code>print</code> the <code>student</code>'s <code>tests</code></li>
+</ul>
+</div>
+
+```python
+lloyd = {
+  "name": "Lloyd",
+  "homework": [90.0, 97.0, 75.0, 92.0],
+  "quizzes": [88.0, 40.0, 94.0],
+  "tests": [75.0, 90.0]
+}
+alice = {
+  "name": "Alice",
+  "homework": [100.0, 92.0, 98.0, 100.0],
+  "quizzes": [82.0, 83.0, 91.0],
+  "tests": [89.0, 97.0]
+}
+tyler = {
+  "name": "Tyler",
+  "homework": [0.0, 87.0, 75.0, 22.0],
+  "quizzes": [0.0, 75.0, 78.0],
+  "tests": [100.0, 100.0]
+}
+
+students = [lloyd, alice, tyler]
+
+for student in students:
+  print(student['name'])
+  print(student['homework'])
+  print(student['quizzes'])
+  print(student['tests'])
 ```
