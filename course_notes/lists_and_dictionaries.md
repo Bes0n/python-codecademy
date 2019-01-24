@@ -788,4 +788,148 @@ for item in prices:
 print(total) #output 117.0
 ```
 
+### Shopping at the Market
 
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Great work! Now we're going to take a step back from the management side and take a look through the eyes of the shopper. </p>
+<p>In order for customers to order online, we are going to have to make a consumer interface. Don't worry: it's easier than it sounds!</p>
+</div>
+
+###### LESSON
+<p>First, make a <em>list</em> called <code>groceries</code> with the values <code>"banana"</code>,<code>"orange"</code>, and <code>"apple"</code>.</p>
+
+```python
+groceries = ['banana', 'orange', 'apple']
+```
+
+### Making a Purchase
+Good! Now you're going to need to know how much you’re paying for all of the items on your grocery list.
+
+```python
+def sum(numbers):
+  total = 0
+  for number in numbers:
+    total += number
+  return total
+
+n = [1, 2, 5, 10, 13]
+print sum(n)
+```
+
+<ol>
+<li>In the above example, we first define a function called <code>sum</code> with a parameter <code>numbers</code>.</li>
+<li>We initialize the variable <code>total</code> which we will use as our running sum.</li>
+<li>For each number in the list, we add that number to the running sum <code>total</code>.</li>
+<li>At the end of the function, we return the running sum.</li>
+<li>After the function, we create, <code>n</code>, a list of numbers.</li>
+<li>Finally, we call the <code>sum(numbers)</code> function with the variable <code>n</code> and print the result.</li>
+</ol>
+
+###### LESSON
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Define a function <code>compute_bill</code> that takes one argument <code>food</code> as input.</p>
+<p>In the function, create a variable <code>total</code> with an initial value of zero.</p>
+<p>For each item in the <code>food</code> list, add the price of that item to <code>total</code>.</p>
+<p>Finally, <code>return</code> the <code>total</code>.</p>
+<p>Ignore whether or not the item you're billing for is in stock.Note that your function should work for <strong>any</strong> food list. </p>
+</div>
+
+```python
+shopping_list = ["banana", "orange", "apple"]
+
+stock = {
+  "banana": 6,
+  "apple": 0,
+  "orange": 32,
+  "pear": 15
+}
+    
+prices = {
+  "banana": 4,
+  "apple": 2,
+  "orange": 1.5,
+  "pear": 3
+}
+
+# Write your code below!
+def compute_bill(food):
+  total = 0
+  for i in food:
+    total += prices[i]
+  return total
+```
+
+### Stocking Out
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Now you need your <code>compute_bill</code> function to take the stock/inventory of a particular item into account when computing the cost.</p>
+<p>Ultimately, if an item isn't in stock, then it shouldn't be included in the total. You can't buy or sell what you don't have!</p>
+</div>
+
+###### LESSON
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Make the following changes to your <code>compute_bill</code> function:</p>
+<p>While you loop through each item of <code>food</code>, only add the price of the item to <code>total</code> <code>if</code> the item's <code>stock</code> count is greater than zero.</p>
+<p><code>if</code> the item is in stock and after you add the price to the <code>total</code>, subtract one from the item's <code>stock</code> count.</p>
+</div>
+
+```python
+shopping_list = ["banana", "orange", "apple"]
+
+stock = {
+  "banana": 6,
+  "apple": 0,
+  "orange": 32,
+  "pear": 15
+}
+    
+prices = {
+  "banana": 4,
+  "apple": 2,
+  "orange": 1.5,
+  "pear": 3
+}
+
+# Write your code below!
+def compute_bill(food):
+  total = 0
+  for i in food:
+    if stock[i] > 0:
+      total += prices[i]
+      stock[i] -= 1
+  return total
+```
+
+### Let's Check Out 
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Perfect! You've done a great job with <em>lists</em> and <em>dictionaries</em> in this project. You've practiced:</p>
+<ul>
+<li>Using <code>for</code> loops with lists and dictionaries</li>
+<li>Writing functions with loops, lists, and dictionaries</li>
+<li>Updating data in response to changes in the environment (for instance, decreasing the number of bananas in <code>stock</code> by 1 when you sell one).</li>
+</ul>
+<p>Thanks for shopping at the Codecademy supermarket!</p>
+</div>
+
+```python
+shopping_list = ["banana", "orange", "apple"]
+
+stock = {
+  "banana": 6,
+  "apple": 0,
+  "orange": 32,
+  "pear": 15
+}
+    
+prices = {
+  "banana": 4,
+  "apple": 2,
+  "orange": 1.5,
+  "pear": 3
+}
+
+# Write your code below!
+def compute_bill(food):
+  total = 0
+  for item in food:
+    if stock[item] > 0:
+      total = total + prices[item]
+      stock[item] = stock[item] - 1
+  return total
+
+print compute_bill(shopping_list)
+```
