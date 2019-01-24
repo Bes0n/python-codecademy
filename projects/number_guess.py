@@ -9,26 +9,30 @@ The program should do the following:
     Determine the winner (user or computer).
 Let's begin! """
 
-#To make sure that the rolls are random, we will need some Python code that isn't built-in  we need to import the randint function,from the random module.
+#To make sure that the rolls are random, we will need some Python code that isn't built-in  we need to import the randint function,
+#from the random module.
 from random import randint 
 
 #You'll also need to import more code that will be used to simulate dice rolls.
 from time import sleep
 
-#By default, using raw_input alone will store the user's input as a string. Since the user is guessing a whole number, we will need an integer, not a string. 
+#By default, using raw_input alone will store the user's input as a string. Since the user is guessing a whole number, 
+#we will need an integer, not a string. 
 def get_user_guess():
   guess = int(input("Guess a number: "))
   return guess 
 #The roll_dice function will be used to simulate the rolling of a pair of dice. 
 def roll_dice(number_of_sides):
-  #Use the randint function that you imported earlier to generate a random integer between 1 and number_of_sides. The syntax for the function looks 
+  #Use the randint function that you imported earlier to generate a random integer between 1 and number_of_sides. 
+  #The syntax for the function looks 
   first_roll = randint(1, int(number_of_sides))
   second_roll = randint(1, int(number_of_sides))
   #On the next line, create a variable called max_val and set it equal to number_of_sides times 2 (since there are two dice).
   max_val = number_of_sides * 2
   print("Max possible value: %s" % (max_val))
-  #On the next line, call the get_user_guess() function. Remember that the function will return the user's guess after prompting the user.
-	#Store the returned value into a variable called guess.
+  #On the next line, call the get_user_guess() function. Remember that the function will return the user's guess 
+  #after prompting the user.
+  #Store the returned value into a variable called guess.
   guess = get_user_guess()
   if guess > max_val:
     print("Your guess is greater that the maximum value.")
