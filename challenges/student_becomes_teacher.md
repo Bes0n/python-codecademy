@@ -181,3 +181,15 @@ def average(numbers):
   return total
 ```
 
+### Just Weight and See
+Great! Now we need to compute a student’s average using weighted averages.
+
+```python
+cost = {
+    "apples": [3.5, 2.4, 2.3],
+    "bananas": [1.2, 1.8],
+}
+
+return 0.9 * average(cost["apples"]) + \
+0.1 * average(cost["bananas"])
+```
