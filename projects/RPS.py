@@ -40,9 +40,10 @@ def decide_winner(user_choice, computer_choice):
   """
   How do we determine the result?
 	
-  Start by adding an if statement that checks if the user_choice is equal to the computer_choice. 	This means it's a tie!
+  Start by adding an if statement that checks if the user_choice is equal to the computer_choice. 	
+  This means it's a tie!
 
-	Inside the if statement, print the message to the user informing them of the tie. The message is
+  Inside the if statement, print the message to the user informing them of the tie. The message is
   stored under the "tie" key in message dictionary.
   """
   print("User choice: %s" % user_choice)
@@ -68,7 +69,8 @@ def decide_winner(user_choice, computer_choice):
 
     
 """
-Great! We have the function that will decide who the winner is between the user and the computer, but we haven't written a function that actually starts the game. Let's do that now.
+Great! We have the function that will decide who the winner is between the user and the computer, but we haven't 
+written a function that actually starts the game. Let's do that now.
 """    
 def play_RPS():
   user_input = raw_input("Enter Rock, Paper, or Scissors: ")
