@@ -1,4 +1,3 @@
-""" 
 Rock, Paper, Scissors
 
 <div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>In this project, we'll build <a href="https://en.wikipedia.org/wiki/Rock-paper-scissors" target="_blank" rel="noopener noreferrer">Rock-Paper-Scissors</a>!</p>
@@ -14,4 +13,3 @@ Rock, Paper, Scissors
 <p>If you get stuck during this project, check out the <strong>project walkthrough video</strong> which can be found at the bottom of the page after the final step of the project.</p>
 </div>
 
-"""
