@@ -761,3 +761,17 @@ apple
 price: 2
 stock: 0
 ```
+
+### Something of Value
+<p>For paperwork and accounting purposes, let's record the total value of your inventory. It's nice to know what we're worth!</p>
+
+###### LESSON
+
+1. <div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Let's determine how much money you would make if you sold all of your food.</p>
+<ul>
+<li>Create a variable called <code>total</code> and set it to zero.</li>
+<li>Loop through the <code>prices</code> dictionary.</li>
+<li>For each key in <code>prices</code>, multiply the number in <code>prices</code> by the number in <code>stock</code>. Print that value into the console and then add it to <code>total</code>.</li>
+<li>Finally, outside your loop, <code>print total</code>.</li>
+</ul>
+</div>
