@@ -775,3 +775,17 @@ stock: 0
 <li>Finally, outside your loop, <code>print total</code>.</li>
 </ul>
 </div>
+
+```python
+prices = {"banana": 4,"apple": 2,"orange": 1.5,"pear": 3}
+
+stock = {"banana": 6, "apple": 0, "orange": 32, "pear": 15}
+
+total = 0 
+
+for item in prices:
+  total += prices[item] * stock[item]
+print(total) #output 117.0
+```
+
+
