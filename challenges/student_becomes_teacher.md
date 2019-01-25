@@ -263,5 +263,187 @@ def get_average(student):
 </div>
 
 ```python 
+lloyd = {
+  "name": "Lloyd",
+  "homework": [90.0, 97.0, 75.0, 92.0],
+  "quizzes": [88.0, 40.0, 94.0],
+  "tests": [75.0, 90.0]
+}
+alice = {
+  "name": "Alice",
+  "homework": [100.0, 92.0, 98.0, 100.0],
+  "quizzes": [82.0, 83.0, 91.0],
+  "tests": [89.0, 97.0]
+}
+tyler = {
+  "name": "Tyler",
+  "homework": [0.0, 87.0, 75.0, 22.0],
+  "quizzes": [0.0, 75.0, 78.0],
+  "tests": [100.0, 100.0]
+}
 
+# Add your function below!
+def average(numbers):
+  total = sum(numbers)
+  total = float(total) / len(numbers)
+  return total
+
+def get_average(student):
+  homework = average(student["homework"])
+  quizzes = average(student["quizzes"])
+  tests = average(student["tests"])
+  return homework * .1 + quizzes * .3 + tests * .6
+  
+def get_letter_grade(score):
+  score = int(score)
+  if score >= 90:
+    return "A"
+  elif score >= 80 :
+    return "B"
+  elif score >= 70:
+    return "C"
+  elif score >= 60:  
+    return "D"
+  else:
+    return "F"
+  print(score)
+  
+print(get_letter_grade(get_average(lloyd)))
 ``` 
+
+### Part of the Whole
+Good! Now let's calculate the class average.
+
+You need to get the average for each student and then calculate the average of those averages.
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Define a function called <code>get_class_average</code> that has one argument <code>class_list</code>. You can expect <code>class_list</code> to be a list containing your three students.</p>
+<p>First, make an empty list called <code>results</code>.</p>
+<p>For each <code>student</code> item in the <code>class_list</code>, calculate <code>get_average(student)</code> and then call <code>results.append()</code> with that result.</p>
+<p>Finally, return the result of calling <code>average()</code> with <code>results</code>.</p>
+</div>
+
+```python 
+lloyd = {
+  "name": "Lloyd",
+  "homework": [90.0, 97.0, 75.0, 92.0],
+  "quizzes": [88.0, 40.0, 94.0],
+  "tests": [75.0, 90.0]
+}
+alice = {
+  "name": "Alice",
+  "homework": [100.0, 92.0, 98.0, 100.0],
+  "quizzes": [82.0, 83.0, 91.0],
+  "tests": [89.0, 97.0]
+}
+tyler = {
+  "name": "Tyler",
+  "homework": [0.0, 87.0, 75.0, 22.0],
+  "quizzes": [0.0, 75.0, 78.0],
+  "tests": [100.0, 100.0]
+}
+
+# Add your function below!
+def average(numbers):
+  total = sum(numbers)
+  total = float(total) / len(numbers)
+  return total
+
+def get_average(student):
+  homework = average(student["homework"])
+  quizzes = average(student["quizzes"])
+  tests = average(student["tests"])
+  return homework * .1 + quizzes * .3 + tests * .6
+  
+def get_letter_grade(score):
+  score = int(score)
+  if score >= 90:
+    return "A"
+  elif score >= 80 :
+    return "B"
+  elif score >= 70:
+    return "C"
+  elif score >= 60:  
+    return "D"
+  else:
+    return "F"
+  print(score)
+  
+#print(get_letter_grade(get_average(lloyd)))
+
+def get_class_average(class_list):
+  results = []
+  for student in class_list:
+    results.append(get_average(student))
+  return average(results)
+```
+
+### How is Everybody Doing? 
+Awesome! You're doing great. Now let's use the functions you've created to check on the grade of the class overall.
+
+###### TASKS
+1. <div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Create a list called <code>students</code> and fill it with the three students, <code>alice</code>, <code>lloyd</code>, and <code>tyler</code>.</p>
+</div>
+2. Find the average grade of the class. Print this numerical grade to the terminal.
+
+3. Finally, determine the letter grade for the class's average and print it to the terminal.
+```python
+lloyd = {
+  "name": "Lloyd",
+  "homework": [90.0, 97.0, 75.0, 92.0],
+  "quizzes": [88.0, 40.0, 94.0],
+  "tests": [75.0, 90.0]
+}
+alice = {
+  "name": "Alice",
+  "homework": [100.0, 92.0, 98.0, 100.0],
+  "quizzes": [82.0, 83.0, 91.0],
+  "tests": [89.0, 97.0]
+}
+tyler = {
+  "name": "Tyler",
+  "homework": [0.0, 87.0, 75.0, 22.0],
+  "quizzes": [0.0, 75.0, 78.0],
+  "tests": [100.0, 100.0]
+}
+
+# Add your function below!
+def average(numbers):
+  total = sum(numbers)
+  total = float(total) / len(numbers)
+  return total
+
+def get_average(student):
+  homework = average(student["homework"])
+  quizzes = average(student["quizzes"])
+  tests = average(student["tests"])
+  return homework * .1 + quizzes * .3 + tests * .6
+  
+def get_letter_grade(score):
+  score = int(score)
+  if score >= 90:
+    return "A"
+  elif score >= 80 :
+    return "B"
+  elif score >= 70:
+    return "C"
+  elif score >= 60:  
+    return "D"
+  else:
+    return "F"
+  print(score)
+  
+#print(get_letter_grade(get_average(lloyd)))
+
+def get_class_average(class_list):
+  results = []
+  for student in class_list:
+    results.append(get_average(student))
+  return average(results)  
+
+students = [alice, lloyd, tyler]
+
+print(get_class_average(students))
+
+print(get_letter_grade(get_class_average(students)))
+```
