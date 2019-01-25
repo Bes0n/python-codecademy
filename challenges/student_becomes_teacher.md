@@ -193,3 +193,10 @@ cost = {
 return 0.9 * average(cost["apples"]) + \
 0.1 * average(cost["bananas"])
 ```
+
+<ol>
+<li>In the above example, we create a dictionary called <code>cost</code> that contains the costs of some fruit.</li>
+<li>Then, we calculate the average cost of apples and the average cost of bananas. Since we like apples much more than we like bananas, we weight the average cost of apples by 90% and the average cost of bananas by 10%.</li>
+</ol>
+
+<p>The <code>\</code> character is a <em>continuation character</em>. The following line is considered a <em>continuation</em> of the current line.</p>
