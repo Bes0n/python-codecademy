@@ -309,3 +309,82 @@ def my_function(x):
 
 print my_function(range(0,3)) # Add your range between the parentheses!
 ```
+
+### Iterating over a list in a function
+<p>Now that we've learned about <code>range</code>, we have two ways of iterating through a list.</p>
+
+<p><strong>Method 1</strong> - <code>for item in list</code>:</p>
+
+```
+for item in list:
+  print item
+```
+
+<p><strong>Method 2</strong> - iterate through indexes:</p>
+
+```
+for i in range(len(list)):
+  print list[i]
+```
+
+Method 1 is useful to loop through the list, but it's not possible to modify the list this way.
+
+Method 2 uses indexes to loop through the list, making it possible to also modify the list if needed. Since we aren't modifying the list, feel free to use either one on this lesson! 
+
+
+###### TASK 
+<p>Create a function that returns the sum of a list of numbers.</p>
+
+<ul>
+<li>On line 3, define a function called <code>total</code> that accepts one argument called <code>numbers</code>. It will be a list.</li>
+<li>Inside the function, create a variable called <code>result</code> and set it to zero.</li>
+<li>Using one of the two methods above, iterate through the <code>numbers</code> list. For each number, add it to <code>result</code>.</li>
+<li>Finally, <code>return result</code>.</li>
+</ul>
+
+```python 
+n = [3, 5, 7]
+
+def total(numbers):
+  result = 0
+  for num in numbers:
+    result += num
+  return result
+```
+
+### Using strings in lists in functions
+Now let's try working with strings!
+
+```
+for item in list:
+  print item
+
+for i in range(len(list)):
+  print list[i]
+```
+
+The example above is just a reminder of the two methods for iterating over a list.
+
+###### TASK
+Create a function that concatenates strings.
+
+<ul>
+<li>Define a function called <code>join_strings</code> accepts an argument called <code>words</code>. It will be a list.</li>
+<li>Inside the function, create a variable called <code>result</code> and set it to <code>""</code>, an empty string.</li>
+<li>Iterate through the <code>words</code> list and concatenate each word to <code>result</code>.</li>
+<li>Finally, <code>return</code> the <code>result</code>.</li>
+</ul>
+Don't add spaces between the joined strings!
+
+```python 
+n = ["Michael", "Lieberman"]
+# Add your function here
+
+def join_strings(words):
+  result = ''
+  for word in words:
+    result += word
+  return result  
+
+print join_strings(n)
+```
