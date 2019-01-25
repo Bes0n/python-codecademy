@@ -388,3 +388,88 @@ def join_strings(words):
 
 print join_strings(n)
 ```
+
+### Using two lists as two arguments in a function
+Using multiple lists in a function is no different from just using multiple arguments in a function!
+
+```python 
+a = [1, 2, 3]
+b = [4, 5, 6]
+print a + b
+# prints [1, 2, 3, 4, 5, 6]
+``` 
+
+The example above is just a reminder of how to concatenate two lists.
+
+###### TASK 
+<p>Create a function that joins two lists together.</p>
+
+<ul>
+<li>On line 5, define a function called <code>join_lists</code> that has two arguments, <code>x</code> and <code>y</code>. They will both be lists.</li>
+<li>Inside that function, <code>return</code> the result of concatenating <code>x</code> and <code>y</code> together.</li>
+</ul>
+
+```python 
+m = [1, 2, 3]
+n = [4, 5, 6]
+
+# Add your code here!
+def join_lists(x,y):
+  return x + y
+
+print join_lists(m, n)
+# You want this to print [1, 2, 3, 4, 5, 6]
+```
+
+### Using a list of lists in a function
+Finally, this exercise shows how to make use of a single list that contains multiple lists and how to use them in a function.
+
+```python 
+list_of_lists = [[1, 2, 3], [4, 5, 6]]
+
+for lst in list_of_lists:
+  for item in lst:
+    print item
+```
+
+<ol>
+<li>In the example above, we first create a list  containing two items, each of which is a list of numbers.</li>
+<li>Then, we iterate through our outer list.</li>
+<li>For each of the two inner lists (as <code>lst</code>), we iterate through the numbers (as <code>item</code>) and print them out.</li>
+</ol>
+
+We end up printing out:
+```
+1
+2
+3
+4
+5
+6
+```
+
+###### TASK
+
+<p>Create a function called <code>flatten</code> that takes a single list and concatenates all the sublists that are part of it into a single list.</p>
+
+<ul>
+<li>On line 3, define a function called <code>flatten</code> with one argument called <code>lists</code>.</li>
+<li>Make a new, empty list called <code>results</code>.</li>
+<li>Iterate through <code>lists</code>. Call the looping variable <code>numbers</code>.</li>
+<li>Iterate through <code>numbers</code>.</li>
+<li>For each number, <code>.append()</code> it to <code>results</code>.</li>
+<li>Finally, <code>return results</code> from your function.</li>
+</ul>
+
+```python 
+n = [[1, 2, 3], [4, 5, 6, 7, 8, 9]]
+# Add your function here
+def flatten(lists):
+  results = []
+  for numbers in lists:
+    for number in numbers:
+      results.append(number)
+  return results    
+
+print flatten(n)
+```
