@@ -200,3 +200,4 @@ return 0.9 * average(cost["apples"]) + \
 </ol>
 
 <p>The <code>\</code> character is a <em>continuation character</em>. The following line is considered a <em>continuation</em> of the current line.</p>
+
