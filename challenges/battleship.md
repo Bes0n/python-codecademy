@@ -138,3 +138,75 @@ print_board(board)
 </ol>
 <p>Let's generate a <code>random_row</code> and <code>random_col</code> from zero to four!</p>
 </div>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Define two new functions, <code>random_row</code> and <code>random_col</code>, that each take <code>board_in</code> as input.</p>
+<p>These functions should <code>return</code> a random row index and a random column index from your board, respectively. Use <code>randint(0, len(board_in) - 1)</code>.</p>
+<p>Call each function on <code>board</code>.</p>
+</div>
+
+```python
+from random import randint 
+
+board = []
+
+for x in range(0, 5):
+  board.append(["O"] * 5)
+
+def print_board(board):
+  for row in board:
+    print " ".join(row)
+    
+# Add your code below!
+def random_row(board_in):
+  return randint(0, len(board_in) - 1)
+
+def random_col(board_in):
+  return randint(0, len(board_in) - 1)
+
+random_row(board)
+random_col(board)
+```
+
+### ...and Seek!
+<p>Good job! For now, let's store coordinates for the ship in the variables <code>ship_row</code> and <code>ship_col</code>.  Now you have a hidden battleship in your ocean!  Let's write the code to allow the player to guess where it is.  </p>
+
+```python 
+number = raw_input("Enter a number: ")
+if int(number) == 0:
+  print "You entered 0"
+```
+
+<p><code>raw_input</code> asks the user for input and returns it as a string. But we're going to want to use integers for our guesses! To do this, we'll wrap the <code>raw_input</code>s with <code>int()</code> to convert the string to an integer.</p>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Create a new variable called <code>guess_row</code> and set it to <code>int(raw_input("Guess Row: "))</code>.</p>
+<p>Create a new variable called <code>guess_col</code> and set it to <code>int(raw_input("Guess Col: "))</code>.</p>
+<p>Click <strong>Run</strong> and then answer the prompts by typing in a number and pressing Enter (or Return on some computers).</p>
+</div>
+
+```python
+from random import randint
+
+board = []
+
+for x in range(0, 5):
+  board.append(["O"] * 5)
+
+def print_board(board):
+  for row in board:
+    print " ".join(row)
+
+def random_row(board):
+  return randint(0, len(board) - 1)
+
+def random_col(board):
+  return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+
+# Add your code below!
+guess_row = int(raw_input("Guess Row:"))
+guess_col = int(raw_input("Guess Col:"))
+```
