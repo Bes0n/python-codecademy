@@ -210,3 +210,498 @@ ship_col = random_col(board)
 guess_row = int(raw_input("Guess Row:"))
 guess_col = int(raw_input("Guess Col:"))
 ```
+
+### It's Not Cheating—It's Debugging!
+
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Awesome!  Now we have a hidden battleship and a guess from our player.  In the next few steps, we'll check the user's guess to see if they are correct.  </p>
+<p>While we're writing and debugging this part of the program, it will be helpful to know where that battleship is hidden.  Let's add a <code>print</code> statement that displays the location of the hidden ship.</p>
+<p>Of course, we'll remove this output when we're finished debugging since if we left it in, our game wouldn't be very challenging. :)  </p>
+</div>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Before the lines prompting the user for input:</p>
+<p>Print the value of <code>ship_row</code>.</p>
+<p>Print the value of <code>ship_col</code>.</p>
+</div>
+
+```python
+from random import randint
+
+board = []
+
+for x in range(0, 5):
+  board.append(["O"] * 5)
+
+def print_board(board):
+  for row in board:
+    print " ".join(row)
+
+def random_row(board):
+  return randint(0, len(board) - 1)
+
+def random_col(board):
+  return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+# Add your code below!
+print(ship_row)
+print(ship_col)
+
+guess_row = int(raw_input("Guess Row: "))
+guess_col = int(raw_input("Guess Col: "))
+
+```
+
+### You win!
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Okay—now for the fun!  We have the actual location of the ship and the player's guess so we can check to see if the player guessed right.</p>
+<p>For a guess to be right, <code>guess_col</code> should be equal to <code>ship_col</code> and <code>guess_row</code> should be equal to <code>ship_row</code>.</p>
+<pre><code class="lang-py"><span language="py" class="CodeBlock__3-kebd7REMI5aXkez6K-B wrap__yxnEyEmMpigk6-3_Wvbzo defaults__1l9bk0Z91YqvzRByZKNgHF cc__1zsV8w8Rj_vs2ayVLJ-2x undefined" data-reactroot=""><div class="CodeMirror"><span class="cm-keyword">if</span> <span class="cm-variable">guess_col</span> <span class="cm-operator">==</span> <span class="cm-number">0</span> <span class="cm-keyword">and</span> <span class="cm-variable">guess_row</span> <span class="cm-operator">==</span> <span class="cm-number">0</span>:<!-- -->
+<!-- -->  <span class="cm-builtin">print</span> <span class="cm-string">"Top-left corner."</span></div></span>
+</code></pre>
+<p>The example above is just a reminder about <code>if</code> statements.</p>
+</div>
+
+### Danger, Will Robinson!!
+Great! Of course, the player isn't going to guess right all the time, so we also need to handle the case where the guess is wrong.
+
+```python
+print board[2][3]
+```
+
+<p>The example above prints out <code>"O"</code>, the element in the 3rd row and 4th column.</p>
+
+###### TASK 
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Add an <code>else</code> under the <code>if</code> we wrote in the previous step.</p>
+<p>Print out <code>"You missed my battleship!"</code></p>
+<p>Set the list element at <code>guess_row</code>, <code>guess_col</code> to <code>"X"</code>.</p>
+<p>As the last line in your <code>else</code> statement, call <code>print_board(board)</code> again so you can see the <code>"X"</code>.Make sure to enter a col and row that is on the board!</p>
+</div>
+
+```python
+from random import randint
+
+board = []
+
+for x in range(0, 5):
+  board.append(["O"] * 5)
+
+def print_board(board):
+  for row in board:
+    print " ".join(row)
+
+print_board(board)
+
+def random_row(board):
+  return randint(0, len(board) - 1)
+
+def random_col(board):
+  return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+print ship_row
+print ship_col
+
+guess_row = int(raw_input("Guess Row: "))
+guess_col = int(raw_input("Guess Col: "))
+
+# Write your code below!
+if guess_row == ship_row and guess_col == ship_col:
+  print("Congratulations! You sank my battleship!")
+else:
+  print("You missed my battleship!")
+  board[guess_row][guess_col] = "X"
+  print_board(board)
+```
+
+### Bad Aim
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Great job!  Now we can handle both correct and incorrect guesses from the user.  But now let’s think a little bit more about the "miss" condition.</p>
+<ol>
+<li>They can enter a guess that's off the board.</li>
+<li>They can guess a spot they’ve already guessed.</li>
+<li>They can just miss the ship.</li>
+</ol>
+<p>We'll add these tests inside our <code>else</code> condition. Let's build the first case now!</p>
+<pre><code class="lang-py"><span language="py" class="CodeBlock__3-kebd7REMI5aXkez6K-B wrap__yxnEyEmMpigk6-3_Wvbzo defaults__1l9bk0Z91YqvzRByZKNgHF cc__1zsV8w8Rj_vs2ayVLJ-2x undefined" data-reactroot=""><div class="CodeMirror"><span class="cm-keyword">if</span> <span class="cm-variable">x</span> <span class="cm-keyword">not</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">8</span>)<!-- --> <span class="cm-keyword">or</span> <!-- -->\<!-- -->
+<!-- -->   <span class="cm-variable">y</span> <span class="cm-keyword">not</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">3</span>)<!-- -->:<!-- -->
+<!-- -->  <span class="cm-builtin">print</span> <span class="cm-string">"Outside the range"</span></div></span>
+</code></pre>
+<p>The example above checks if either <code>x</code> or <code>y</code> are outside those ranges. The <code>\</code> character just continues the <code>if</code> statement onto the next line.</p>
+</div>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Add a new <code>if</code> statement that is nested under the <code>else</code>.</p>
+<p>Like the example above, it should check if <code>guess_row</code> is not in <code>range(5)</code> or  <code>guess_col</code> is not in <code>range(5)</code>.</p>
+<p>If that is the case, print out <code>"Oops, that's not even in the ocean."</code></p>
+<p>After your new <code>if</code> statement, add an <code>else</code> that contains your existing handler for an incorrect guess. Don't forget to indent the code!</p>
+</div>
+
+```python
+from random import randint
+
+board = []
+
+for x in range(0, 5):
+  board.append(["O"] * 5)
+
+def print_board(board):
+  for row in board:
+    print " ".join(row)
+
+print_board(board)
+
+def random_row(board):
+  return randint(0, len(board) - 1)
+
+def random_col(board):
+  return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+print ship_row
+print ship_col
+
+guess_row = int(raw_input("Guess Row: "))
+guess_col = int(raw_input("Guess Col: "))
+
+# Write your code below!
+if guess_row == ship_row and guess_col == ship_col:
+  print("Congratulations! You sank my battleship!")
+else:
+  if guess_row not in range(5) or \
+  guess_col not in range(5):
+    print("Oops, that's not even in the ocean.")
+  else:
+    print("You missed my battleship!")
+    board[guess_row][guess_col] = "X"
+    print_board(board)
+```
+
+### Not Again!
+Great! Now let's handle the second type of incorrect guess: the player guesses a location that was already guessed. How will we know that a location was previously guessed?
+
+```python
+print board[guess_row][guess_col]
+```
+
+<p>The example above will print an <code>'X'</code> if already guessed or an <code>'O'</code> otherwise.</p>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Add an <code>elif</code> to see if the guessed location already has an 'X' in it.</p>
+<p>If it has, <code>print "You guessed that one already."</code></p>
+</div>
+
+```python
+from random import randint
+
+board = []
+
+for x in range(0, 5):
+  board.append(["O"] * 5)
+
+def print_board(board):
+  for row in board:
+    print " ".join(row)
+
+print_board(board)
+
+def random_row(board):
+  return randint(0, len(board) - 1)
+
+def random_col(board):
+  return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+print ship_row
+print ship_col
+
+guess_row = int(raw_input("Guess Row: "))
+guess_col = int(raw_input("Guess Col: "))
+
+# Write your code below!
+if guess_row == ship_row and guess_col == ship_col:
+  print("Congratulations! You sank my battleship!")
+else:
+  if guess_row not in range(5) or \
+  guess_col not in range(5):
+    print("Oops, that's not even in the ocean.")
+  elif board[guess_row][guess_col] == "X":
+    print("You guessed that one already.")
+  else:
+    print("You missed my battleship!")
+    board[guess_row][guess_col] = "X"
+    print_board(board)
+```
+
+### Test Run
+Congratulations! Now you should have a game of Battleship! that is fully functional for one guess.
+
+Make sure you play it a couple of times and try different kinds of incorrect guesses. This is a great time to stop and do some serious debugging.
+
+In the next step, we'll move on and look at how to give the user 4 guesses to find the battleship.
+
+###### TASK
+Thoroughly test your game. Make sure you try a variety of different guesses and look for any errors in the syntax or logic of your program.
+
+### Play It, Sam
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>You can successfully make one guess in Battleship! But we’d like our game to allow the player to make up to 4 guesses before they lose.</p>
+<pre><code class="lang-py"><span language="py" class="CodeBlock__3-kebd7REMI5aXkez6K-B wrap__yxnEyEmMpigk6-3_Wvbzo defaults__1l9bk0Z91YqvzRByZKNgHF cc__1zsV8w8Rj_vs2ayVLJ-2x undefined" data-reactroot=""><div class="CodeMirror"><span class="cm-keyword">for</span> <span class="cm-variable">turn</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">4</span>)<!-- -->:<!-- -->
+<!-- -->  <span class="cm-comment"># Make a guess</span>
+<!-- -->  <span class="cm-comment"># Test that guess</span></div></span>
+</code></pre>
+<p>We can use a <code>for</code> loop to iterate through a range. Each iteration will be a turn.</p>
+</div>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Add a <code>for</code> loop that repeats the guessing and checking part of your game for 4 turns, like the example above.</p>
+<p>At the beginning of each iteration, <code>print "Turn", turn + 1</code> to let the player know what <code>turn</code> they are on.</p>
+<p>Indent everything that should be repeated.</p>
+</div>
+
+```python
+from random import randint
+
+board = []
+
+for x in range(5):
+  board.append(["O"] * 5)
+
+def print_board(board):
+  for row in board:
+    print " ".join(row)
+
+print_board(board)
+
+def random_row(board):
+  return randint(0, len(board) - 1)
+
+def random_col(board):
+  return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+print ship_row
+print ship_col
+
+# Everything from here on should go in your for loop!
+# Be sure to indent four spaces!
+for turn in range(4):
+  print "Turn", turn + 1
+  #for Python 3 print("Turn", turn + 1)
+  guess_row = int(raw_input("Guess Row: "))
+  guess_col = int(raw_input("Guess Col: "))
+
+  if guess_row == ship_row and guess_col == ship_col:
+    print "Congratulations! You sunk my battleship!"
+  else:
+    if (guess_row < 0 or guess_row > 4) or (guess_col < 0 or guess_col > 4):
+      print "Oops, that's not even in the ocean."
+    elif(board[guess_row][guess_col] == "X"):
+      print "You guessed that one already."
+    else:
+      print "You missed my battleship!"
+      board[guess_row][guess_col] = "X"
+    # Print (turn + 1) here!
+    print_board(board)
+```
+
+### Game Over
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>If someone runs out of guesses without winning right now, the game just exits. It would be nice to let them know why.</p>
+<p>Since we only want this message to display if the user guesses wrong on their last turn, we need to think carefully about where to put it.</p>
+<ol>
+<li>We’ll want to put it under the <code>else</code> that accounts for misses</li>
+<li>We’ll want to print the message no matter what the cause of the miss</li>
+<li>Since our <code>turn</code> variable starts at 0 and goes to 3, we will want to end the game when <code>turn</code> equals <code>3</code>.</li>
+</ol>
+</div>
+
+###### TASK
+
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Add an <code>if</code> statement that checks to see if the user is out of guesses.</p>
+<ul>
+<li>Put it under the <code>else</code> that accounts for misses.</li>
+<li>Put it after the <code>if/elif/else</code> statements that check for the reason the player missed. We want <code>"Game Over"</code> to print regardless of the reason.</li>
+</ul>
+<p>If <code>turn</code> equals <code>3</code>, <code>print "Game Over"</code>.</p>
+</div>
+
+```python
+from random import randint
+
+board = []
+
+for x in range(0, 5):
+  board.append(["O"] * 5)
+
+def print_board(board):
+  for row in board:
+    print " ".join(row)
+
+print_board(board)
+
+def random_row(board):
+  return randint(0, len(board) - 1)
+
+def random_col(board):
+  return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+print ship_row
+print ship_col
+
+# Everything from here on should be in your for loop
+# don't forget to properly indent!
+for turn in range(4):
+  if turn < 3:
+    print "Turn", turn + 1
+    guess_row = int(raw_input("Guess Row: "))
+    guess_col = int(raw_input("Guess Col: "))
+
+    if guess_row == ship_row and guess_col == ship_col:
+      print "Congratulations! You sank my battleship!"   
+    else:
+      if guess_row not in range(5) or \
+        guess_col not in range(5):
+        print "Oops, that's not even in the ocean."
+      elif board[guess_row][guess_col] == "X":
+        print( "You guessed that one already." )
+      else:
+        print "You missed my battleship!"
+        board[guess_row][guess_col] = "X"
+      print_board(board)
+  else:
+    print("Game Over")
+```
+
+### A Real Win
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Almost there! We can play Battleship!, but you’ll notice that when you win, if you haven’t already guessed 4 times, the program asks you to enter another guess. What we’d rather have happen is for the program to end—it’s no fun guessing if you know you’ve already sunk the Battleship!</p>
+<p>We can use the <code>break</code> command to get out of a <code>for</code> loop.</p>
+</div>
+
+###### TASK
+<p>Add a <code>break</code> under the win condition to end the loop after a win.</p>
+
+```python
+from random import randint
+
+board = []
+
+for x in range(0, 5):
+  board.append(["O"] * 5)
+
+def print_board(board):
+  for row in board:
+    print " ".join(row)
+
+print_board(board)
+
+def random_row(board):
+  return randint(0, len(board) - 1)
+
+def random_col(board):
+  return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+print ship_row
+print ship_col
+
+# Everything from here on should be in your for loop
+# don't forget to properly indent!
+for turn in range(4):
+  if turn < 3:
+    print ("Turn %d" % (turn + 1))
+    guess_row = int(raw_input("Guess Row: "))
+    guess_col = int(raw_input("Guess Col: "))
+    
+    if guess_row == ship_row and guess_col == ship_col:
+      print "Congratulations! You sank my battleship!"
+      break
+    else:
+      if guess_row not in range(5) or \
+        guess_col not in range(5):
+        print("Oops, that's not even in the ocean.")
+      elif board[guess_row][guess_col] == "X":
+        print( "You guessed that one already." )
+      else:
+        print "You missed my battleship!"
+        board[guess_row][guess_col] = "X"
+      print_board(board)
+  else:
+    print("Game Over")
+```
+
+### To Your Battle Stations!
+Congratulations! You have a fully functional Battleship game! Play it a couple of times and get your friends to try it out, too. (Don’t forget to go back and remove the debugging output that gives away the location of the battleship!)
+
+You may want to take some time to clean up and document your code as well.
+
+###### TASK
+When you are done playing Battleship! and are ready to move on, click Run.
+
+```python
+from random import randint
+
+board = []
+
+for x in range(0, 5):
+  board.append(["O"] * 5)
+
+def print_board(board):
+  for row in board:
+    print " ".join(row)
+
+print_board(board)
+
+def random_row(board):
+  return randint(0, len(board) - 1)
+
+def random_col(board):
+  return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+
+# Everything from here on should be in your for loop
+# don't forget to properly indent!
+for turn in range(4):
+  if turn < 3:
+    print ("Turn %d" % (turn + 1))
+    guess_row = int(raw_input("Guess Row: "))
+    guess_col = int(raw_input("Guess Col: "))
+
+    if guess_row == ship_row and guess_col == ship_col:
+      print "Congratulations! You sank my battleship!"
+      break
+    else:
+      if guess_row not in range(5) or \
+        guess_col not in range(5):
+        print("Oops, that's not even in the ocean.")
+      elif board[guess_row][guess_col] == "X":
+        print( "You guessed that one already." )
+      else:
+        print "You missed my battleship!"
+        board[guess_row][guess_col] = "X"
+      print_board(board)
+  else:
+    print("Game Over")
+```
+
+### Extra Credit
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>You can also add on to your Battleship! program to make it more complex and fun to play. Here are some ideas for enhancements—maybe you can think of some more!</p>
+<ol>
+<li><p>Make multiple battleships: you'll need to be careful because you need to make sure that you don’t place battleships on top of each other on the game board. You'll also want to make sure that you balance the size of the board with the number of ships so the game is still challenging and fun to play.</p>
+</li>
+<li><p>Make battleships of different sizes: this is trickier than it sounds. All the parts of the battleship need to be vertically or horizontally touching and you’ll need to make sure you don’t accidentally place part of a ship off the side of the board.</p>
+</li>
+<li><p>Make your game a two-player game.</p>
+</li>
+<li><p>Use functions to allow your game to have more features like rematches, statistics and more!</p>
+</li>
+</ol>
+<p>Some of these options will be easier after we cover loops in the next lesson. Think about coming back to Battleship! after a few more lessons and see what other changes you can make!</p>
+</div>
+
