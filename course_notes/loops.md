@@ -156,3 +156,43 @@ while True:
 <p>In this example, the loop will <code>break</code> if a 5 is generated, and the <code>else</code> will not execute.  Otherwise, after 3 numbers are generated, the loop condition will become false and the else will execute.</p>
 </div>
 
+###### TASK
+<p>Click Run to see <code>while</code>/<code>else</code> in action!</p>
+
+```python
+import random
+
+print "Lucky Numbers! 3 numbers will be generated."
+print "If one of them is a '5', you lose!"
+
+count = 0
+while count < 3:
+  num = random.randint(1, 6)
+  print num
+  if num == 5:
+    print "Sorry, you lose!"
+    break
+  count += 1
+else:
+  print "You win!"
+
+#Output: 
+"""
+Lucky Numbers! 3 numbers will be generated.
+If one of them is a '5', you lose!
+1
+5
+Sorry, you lose!
+
+Or
+
+Lucky Numbers! 3 numbers will be generated.
+If one of them is a '5', you lose!
+4
+2
+3
+You win!
+"""
+```
+
+### Your own while / else
