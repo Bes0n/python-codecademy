@@ -488,4 +488,20 @@ A fine selection of fruits!
 """
 ```
 
+### Create your own
+<p>To wrap up this lesson, let's create our own <code>for</code>/<code>else</code> statement from scratch.</p>
 
+###### TASK 
+<p>Build your <code>for</code>/<code>else</code> statement in the editor. Execution of the <code>else</code> branch is optional, but your code should print a string of your choice to the editor regardless.</p>
+
+```python
+microsoft_products = ['skype', 'windows', 'command center', 'exchange', 'scom', 'centos', 'sccm', 'dpm', 'orchestrator']
+
+for product in microsoft_products:
+  if product == 'centos':
+    print('%s is not microsoft product' % 'centos')
+    break
+  print(product)
+else:
+  print("Yes, all listed products from Microsoft") 
+```
