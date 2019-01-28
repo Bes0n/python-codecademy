@@ -131,3 +131,23 @@ def is_prime(x):
 print is_prime(13)
 print is_prime(10)
 ```
+
+### reverse
+
+Great work so far! Let's practice writing some functions that work with strings.
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Define a function called <code>reverse</code> that takes a string <code>text</code>and returns that string in reverse. For example: <code>reverse("abcd")</code> should return <code>"dcba"</code>.</p>
+<p>You may not use <code>reversed</code> or <code>[::-1]</code> to help you with this.</p>
+<p>You may get a string containing special characters (for example, !, @, or #).</p>
+</div>
+
+```python
+def reverse(text):
+  new_str = ''
+  for i in range(len(text)):
+    new_str += text[len(text) - 1 - i]
+  return new_str
+    
+print(reverse("Python!"))
+```
