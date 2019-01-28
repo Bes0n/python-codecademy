@@ -244,3 +244,154 @@ while guesses_left > 0:
 else:
   print("You lose.")
 ```
+
+### For your health
+<p>An alternative way to loop is the <code>for</code> loop.  The syntax is as shown in the code editor. This example means "for each number <code>i</code> in the range 0 - 9,  print <code>i</code>".</p>
+
+###### TASK
+Make the loop print the numbers from 0 to 19 instead of 0 to 9.
+
+```python
+print "Counting..."
+
+for i in range(20):
+  print i
+```
+
+### For your hobbies
+This kind of loop is useful when you want to do something a certain number of times, such as append something to the end of a list.
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Create a <code>for</code> loop that prompts the user for a hobby 3 times.</p>
+<p>Save the result of each prompt in a <code>hobby</code> variable</p>
+<p><code>append</code> each one to <code>hobbies</code>.</p>
+<p>print <code>hobbies</code> after your <code>for</code> loop</p>
+<p>Make sure to answer the prompts in the terminal when testing your code!</p>
+</div>
+
+```python
+hobbies = []
+
+# Add your code below!
+for i in range(3):
+  hobby = raw_input("Enter your hobby: ")
+  hobbies.append(hobby)
+```
+
+### For your strings
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Using a <code>for</code> loop, you can print out each individual character in a string.  </p>
+<p>The example in the editor is almost plain English: "for each character <code>c</code> in <code>thing</code>, print <code>c</code>".</p>
+</div>
+
+###### TASK 
+<p>Add a second <code>for</code> loop so that each character in <code>word</code> is printed one at a time.</p>
+
+```python 
+thing = "spam!"
+
+for c in thing:
+  print c
+
+word = "eggs!"
+
+# Your code here!
+for c in word:
+  print(c)
+```
+
+### For your A
+<p>String manipulation is useful in <code>for</code> loops if you want to modify some content in a string. </p>
+
+```python
+word = "Marble"
+for char in word:
+  print char,
+```
+<p>The example above iterates through each character in <code>word</code> and, in the end, prints out <code>M a r b l e</code>.</p>
+<p>The <code>,</code> character after our <code>print</code> statement means that our next <code>print</code> statement keeps printing on the same line.</p>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Let's filter out the letter <code>"A"</code> from our string.</p>
+<ul>
+<li>Do the following <code>for</code> each <code>char</code>acter in the <code>phrase</code>.</li>
+<li>If <code>char</code> is an <code>"A"</code> or <code>char</code> is an <code>"a"</code>, <code>print "X",</code> instead of <code>char</code>. Make sure to include the trailing comma.</li>
+<li>Otherwise (<code>else:</code>), please <code>print char,</code> with the trailing comma.</li>
+</ul>
+</div>
+
+```python 
+phrase = "A bird in the hand..."
+
+# Add your for loop
+for char in phrase:
+  if char == "A" or char == "a":
+    print "X",
+  else:
+    print char,
+
+#Don't delete this print statement!
+print
+
+#Output
+"""
+X   b i r d   i n   t h e   h X n d . . .
+"""
+```
+
+### For your lists
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Perhaps the most useful (and most common) use of <code>for</code> loops is to go through a list.</p>
+<p>On each iteration, the variable <code>num</code> will be the next value in the list.  So, the first time through, it will be <code>7</code>, the second time it will be <code>9</code>, then <code>12</code>, <code>54</code>, <code>99</code>, and then the loop will exit when there are no more values in the list.</p>
+</div>
+
+###### TASK
+<p>Write a second <code>for</code> loop that goes through the <code>numbers</code> list and prints each element <em>squared</em>, each on its own line.</p>
+
+```python
+numbers  = [7, 9, 12, 54, 99]
+
+print "This list contains: "
+
+for num in numbers:
+  print num
+
+# Add your loop below!
+for num in numbers:
+  print num ** 2 
+```
+
+### Looping over a dictionary
+You may be wondering how looping over a dictionary would work. Would you get the key or the value?
+
+The short answer is: you get the key which you can use to get the value.
+
+```python 
+d = {'x': 9, 'y': 10, 'z': 20}
+for key in d:
+  if d[key] == 10:
+    print "This dictionary has the value 10!"
+```
+
+<ol>
+<li>First, we create a dictionary with strings as the keys and numbers as the values.</li>
+<li>Then, we iterate through the dictionary, each time storing the key in <code>key</code>.</li>
+<li>Next, we check if that key's value is equal to 10. </li>
+<li>If so, we print <code>"This dictionary has the value 10!"</code></li>
+</ol>
+
+###### TASK
+<p>On line 5, print the key, followed by a space, followed by the value associated with that key.</p>
+
+```python
+d = {'a': 'apple', 'b': 'berry', 'c': 'cherry'}
+
+for key in d:
+  # Your code here!
+  print key, d[key]
+
+#Output:
+"""
+a apple
+c cherry
+b berry
+"""
+```
