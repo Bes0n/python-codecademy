@@ -196,3 +196,51 @@ You win!
 ```
 
 ### Your own while / else
+Now you should be able to make a game similar to the one in the last exercise. The code from the last exercise is below:
+
+```python 
+count = 0
+while count < 3:
+  num = random.randint(1, 6)
+  print num
+  if num == 5:
+    print "Sorry, you lose!"
+    break
+  count += 1
+else:
+  print "You win!"
+```
+
+<p>In this exercise, allow the user to guess what the number is <code>3</code> times. </p>
+
+```python
+guess = int(raw_input("Your guess: "))
+```
+
+<p>Remember, <code>raw_input</code> turns user input into a string, so we use <code>int()</code> to make it a number again.</p>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Use a <code>while</code> loop to let the user keep guessing so long as <code>guesses_left</code> is greater than zero.</p>
+<p>Ask the user for their <code>guess</code>, just like the second example above.</p>
+<p>If they guess correctly, <code>print "You win!"</code> and <code>break</code>.</p>
+<p>Decrement <code>guesses_left</code> by one.</p>
+<p>Use an <code>else:</code> case after your <code>while</code> loop to print <code>"You lose."</code>.</p>
+</div>
+
+```python 
+from random import randint
+
+# Generates a number from 1 through 10 inclusive
+random_number = randint(1, 10)
+
+guesses_left = 3
+# Start your game!
+while guesses_left > 0:
+  guess = int(raw_input("Your guess: "))
+  if guess == random_number:
+    print("You win!")
+    break
+  guesses_left -= 1
+else:
+  print("You lose.")
+```
