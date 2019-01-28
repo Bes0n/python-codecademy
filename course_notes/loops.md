@@ -395,3 +395,97 @@ c cherry
 b berry
 """
 ```
+
+### Counting as you go
+<p>A weakness of using this for-each style of iteration is that you don't know the index of the thing you're looking at.  Generally this isn't an issue, but at times it is useful to know how far into the list you are.  Thankfully the built-in <code>enumerate</code> function helps with this.</p>
+<p><code>enumerate</code> works by supplying a corresponding index to each element in the list that you pass it.  Each time you go through the loop, <code>index</code> will be one greater, and <code>item</code> will be the next item in the sequence.  It's very similar to using a normal <code>for</code> loop with a list, except this gives us an easy way to count how many items we've seen so far.</p>
+
+###### TASK 
+<p>We don't want the user to see things listed from index 0, since this looks unnatural. Instead, the items should appear to start at index 1.  Modify the print statement to reflect this behavior. See the Hint for help.</p>
+
+```python
+choices = ['pizza', 'pasta', 'salad', 'nachos']
+
+print 'Your choices are:'
+for index, item in enumerate(choices):
+  print index+1, item
+  
+#Output
+"""
+Your choices are:
+1 pizza
+2 pasta
+3 salad
+4 nachos
+"""
+```
+
+### Multiple lists
+
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>It's also common to need to iterate over two lists at once.  This is where the built-in <code>zip</code> function comes in handy.</p>
+<p><code>zip</code> will create pairs of elements when passed two lists, and will stop at the end of the shorter list.</p>
+<p><code>zip</code> can handle three or more lists as well!</p>
+</div>
+
+###### TASK
+Compare each pair of elements and print the larger of the two.
+
+```python
+list_a = [3, 9, 17, 15, 19]
+list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
+
+for a, b in zip(list_a, list_b):
+  # Add your code here!
+  print(max(a,b))
+  
+#Output
+"""
+3
+9
+17
+15
+30
+"""
+```
+
+### For / else
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Just like with <code>while</code>, <code>for</code> loops may have an <code>else</code> associated with them.</p>
+<p>In this case, the <code>else</code> statement is executed after the <code>for</code>, but only if the <code>for</code> ends normally—that is, not with a <code>break</code>. This code will <code>break</code> when it hits <code>'tomato'</code>, so the <code>else</code> block won't be executed.</p>
+</div>
+
+###### TASK
+<p>Click Run to see how <code>for</code> and <code>else</code> work together.</p>
+
+```python
+fruits = ['banana', 'apple', 'orange', 'tomato', 'pear', 'grape']
+
+print 'You have...'
+for f in fruits:
+  if f == 'tomato':
+    print 'A tomato is not a fruit!' # (It actually is.)
+    break
+  print 'A', f
+else:
+  print 'A fine selection of fruits!'
+  
+#Output
+"""
+You have...
+A banana
+A apple
+A orange
+A tomato is not a fruit!
+
+Or if we will remove tomato from the list:
+
+You have...
+A banana
+A apple
+A orange
+A pear
+A grape
+A fine selection of fruits!
+"""
+```
+
+
