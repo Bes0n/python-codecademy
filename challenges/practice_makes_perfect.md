@@ -151,3 +151,13 @@ def reverse(text):
     
 print(reverse("Python!"))
 ```
+
+### anti_vowel
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Define a function called <code>anti_vowel</code> that takes one string, <code>text</code>, as input and returns the text with all of the vowels removed.</p>
+<p>For example: <code>anti_vowel("Hey You!")</code> should return <code>"Hy Y!"</code>. Don't count Y as a vowel. Make sure to remove lowercase and uppercase vowels.</p>
+</div>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Define a function called <code>anti_vowel</code> that takes one string, <code>text</code>, as input and returns the text with all of the vowels removed.</p>
+<p>For example: <code>anti_vowel("Hey You!")</code> should return <code>"Hy Y!"</code>. Don't count Y as a vowel. Make sure to remove lowercase and uppercase vowels.</p>
+</div>
