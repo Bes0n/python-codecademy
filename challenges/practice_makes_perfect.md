@@ -117,3 +117,17 @@ print(factorial(4))
 <p>If it is, <code>return False</code>.</p>
 <p>If none of them are, then <code>return True</code>.</p>
 </div>
+
+```python
+def is_prime(x):
+    if x < 2:
+        return False
+    else:
+        for n in range(2, x-1):
+            if x % n == 0:
+                return False
+        return True
+
+print is_prime(13)
+print is_prime(10)
+```
