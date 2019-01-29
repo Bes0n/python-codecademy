@@ -100,3 +100,7 @@ common practice among professional software engineers.
 On the next line, print the current date in the following format: Full weekday name Month Day, Year. Use concatenation and strftime to help 
 you.
 """
+print(strftime("%A %d, %Y"))
+
+
+
