@@ -91,14 +91,15 @@ def welcome(username):
   sleep(1)
 
 """
-Step 11. It's time to use the new strftime function we imported. The cool thing about the strftime function is that printing different units 
-of time (months, days, years, hours, etc.) is simpler than having to call separate functions for each aspect (the way datetime works).
+Step 11. It's time to use the new strftime function we imported. The cool thing about the strftime function is that printing different 
+units of time (months, days, years, hours, etc.) is simpler than having to call separate functions for each aspect 
+the way datetime works).
 
-Look at the strftime documentation to understand how to use it (the "Directive" table is especially useful). Reviewing documentation is a 
-common practice among professional software engineers.
+Look at the strftime documentation to understand how to use it (the "Directive" table is especially useful). Reviewing documentation 
+is a common practice among professional software engineers.
 
-On the next line, print the current date in the following format: Full weekday name Month Day, Year. Use concatenation and strftime to help 
-you.
+On the next line, print the current date in the following format: Full weekday name Month Day, Year. Use concatenation and strftime 
+to help you.
 """
 print(strftime("%A %d, %Y"))
 
@@ -148,7 +149,8 @@ def start_calendar():
 Step 17. 
 Now we'll start building the most important part of this program, the actual calendar (along with its required behavior).
 
-Inside of the while loop, prompt the user to enter A to Add, U to Update, V to View, D to Delete, X to Exit:. Store their input in a variable called user_choice.
+Inside of the while loop, prompt the user to enter A to Add, U to Update, V to View, D to Delete, X to Exit:. Store their input 
+in a variable called user_choice.
 
 On the next line, convert user_choice to upper case.
 """
@@ -170,5 +172,29 @@ Step 19. Keeping inside the while loop, add an if statement that checks if the u
     if user_choice == 'V':
          
 """
-Step 20. 
+Step 20. If the user would like to view the calendar, first we have to make sure the calendar contains events. Otherwise, we'll print
+the calendar for them.
+
+Inside of the current if statement, add another if statement that checks if there are no dates (keys) in the calendar 
+(i.e. less than 1 key).
+
+You can use the .keys() function on calendar, and use the len() function to check the length (size) of the keys.
+
+Inside of the new if statement, print a message to the user letting them know the calendar is empty.
+"""
+      if len(calendar.keys()) < 1:
+        print("Calendar is empty")
+
+"""
+Step 21. That will take care of notifying the user if their calendar is empty. However, if it's not empty, we need to print 
+the calendar for them.
+
+Add an else block that corresponds to the if block you just added. Inside of the else block, print the calendar.
+"""
+
+"""
+Step 22. Perfect - you just built a fifth of the functionality that's needed! Keep in mind that what you just coded represents the 
+general flow of how each behavior will function. Now let's add functionality to update the calendar.
+
+Add an elif block (corresponding to the first if block you coded) that checks if the user's choice is U (for Update).
 """
