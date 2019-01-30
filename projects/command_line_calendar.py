@@ -102,5 +102,73 @@ you.
 """
 print(strftime("%A %d, %Y"))
 
+"""
+Step 12. 
+On the next line, print the current time in the following format: H:M:S. Use concatenation and strftime to help you.
 
+Next, sleep the program for 1 second.
+"""
+sleep(1)
 
+"""
+Step 13. You succesfully used a new function, congrats! On the next line, print "What would you like to do?" to the user.
+"""
+print("What would you like to do?")
+
+"""
+Step 14. Perfect! Our welcome message function is now complete. Let's start building the calendar's functionality.
+
+Create a new function called start_calendar().
+"""
+def start_calendar():
+   
+"""
+Step 15. When the calendar starts, the first thing we'd like to do is welcome the user. On the next line, inside of start_calendar(), 
+call the welcome() function.
+"""
+
+def start_calendar():
+  welcome()
+
+"""
+Step 16. The project instructions ask that the project terminate only when the user voluntarily exits the program. In this case, 
+we can use a while loop, since while loops will continue running as long as a condition is true.
+
+On the next line, create a variable called start and set it equal to True. Next, add a while loop that uses start as the Boolean 
+condition.
+
+Since start is True, we have ensured that this loop will continue to run, unless start changes value.
+"""
+def start_calendar():
+  welcome()
+  start = True
+  while start == True:
+   
+"""
+Step 17. 
+Now we'll start building the most important part of this program, the actual calendar (along with its required behavior).
+
+Inside of the while loop, prompt the user to enter A to Add, U to Update, V to View, D to Delete, X to Exit:. Store their input in a variable called user_choice.
+
+On the next line, convert user_choice to upper case.
+"""
+
+"""
+Step 18. Great! We now have the user's input. The instructions require that a user be able to:
+
+View the calendar
+Update the calendar
+Add to the calendar
+Delete from the calendar
+Let's start with the behavior that will be the easiest to implement: viewing the calendar.
+"""
+
+"""
+Step 19. Keeping inside the while loop, add an if statement that checks if the user's choice is V (for View).
+"""
+    user_choice = user_choice.upper()
+    if user_choice == 'V':
+         
+"""
+Step 20. 
+"""
