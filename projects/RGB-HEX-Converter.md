@@ -263,6 +263,7 @@ def convert():
 convert()      
 ```
 
+```python
 #Full Code: 
 
 def rgb_hex():
@@ -312,3 +313,5 @@ def convert():
       print("Error")
       
 convert()
+
+```
