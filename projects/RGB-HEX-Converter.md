@@ -264,7 +264,8 @@ convert()
 ```
 
 ```python
-#Full Code: 
+#Full Code:
+#Code has a bug, which I was not able to find. HEX to RGB is not working properly. 
 
 def rgb_hex():
   invalid_msg = "Invalid values entered"
