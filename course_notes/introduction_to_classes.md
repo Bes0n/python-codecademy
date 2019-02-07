@@ -202,3 +202,250 @@ Chad 7 True
 
 ###### TASK
 <p>Add a method, <code>description</code>, to your <code>Animal</code> class. Using two separate <code>print</code> statements, it should print out the <code>name</code> and <code>age</code> of the animal it's called on. Then, create an instance of <code>Animal</code>, <code>hippo</code> (with whatever name and age you like), and call its <code>description</code> method.</p>
+
+```python
+class Animal(object):
+  """Makes cute animals."""
+  is_alive = True
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  # Add your method here!
+  def description(self):
+    print self.name
+    print self.age
+
+#calling our custom method    
+print(Animal('Jacala', 41).description())
+
+#or calling __init__ method
+giraffe = Animal("Bruce", 1)
+print(giraffe.name, giraffe.age)
+```
+
+### They're Multiplying!
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>A class can have any number of <strong>member variables</strong>. These are variables that are available to all members of a class.</p>
+<pre><code class="lang-py"><span language="py" class="CodeBlock__3-kebd7REMI5aXkez6K-B wrap__yxnEyEmMpigk6-3_Wvbzo defaults__1l9bk0Z91YqvzRByZKNgHF cc__1zsV8w8Rj_vs2ayVLJ-2x undefined" data-reactroot=""><div class="CodeMirror"><span class="cm-variable">hippo</span> <span class="cm-operator">=</span> <span class="cm-variable">Animal</span>(<span class="cm-string">"Jake"</span>,<!-- --> <span class="cm-number">12</span>)<!-- -->
+<span class="cm-variable">cat</span> <span class="cm-operator">=</span> <span class="cm-variable">Animal</span>(<span class="cm-string">"Boots"</span>,<!-- --> <span class="cm-number">3</span>)<!-- -->
+<span class="cm-builtin">print</span> <span class="cm-variable">hippo</span>.<span class="cm-property">is_alive</span>
+<span class="cm-variable">hippo</span>.<span class="cm-property">is_alive</span> <span class="cm-operator">=</span> <span class="cm-keyword">False</span>
+<span class="cm-builtin">print</span> <span class="cm-variable">hippo</span>.<span class="cm-property">is_alive</span>
+<span class="cm-builtin">print</span> <span class="cm-variable">cat</span>.<span class="cm-property">is_alive</span></div></span>
+</code></pre>
+<ol>
+<li>In the example above, we create two instances of an <code>Animal</code>.</li>
+<li>Then we print out <code>True</code>, the default value stored in hippo's <code>is_alive</code> member variable.</li>
+<li>Next, we set that to False and print it out to make sure.</li>
+<li>Finally, we print out <code>True</code>, the value stored in cat's <code>is_alive</code> member variable. We only changed the variable in hippo, not in cat.</li>
+</ol>
+<p>Let's add another member variable to <code>Animal</code>.</p>
+</div>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>After line 3, add a second member variable called <code>health</code> that contains the string <code>"good"</code>.</p>
+<p>Then, create two new <code>Animals</code>: <code>sloth</code> and <code>ocelot</code>. (Give them whatever names and ages you like.)</p>
+<p>Finally, on three separate lines, <code>print</code> out the <code>health</code> of your <code>hippo</code>, <code>sloth</code>, and <code>ocelot</code>.</p>
+</div>
+
+```python
+class Animal(object):
+  """Makes cute animals."""
+  is_alive = True
+  health = "good"
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  # Add your method here!
+  def description(self):
+    print self.name
+    print self.age
+    
+hippo = Animal("Bruce", 1)
+print(hippo.health)
+sloth = Animal("Baby", 20)
+print(sloth.health)
+ocelot = Animal("Johny", 25)
+print(ocelot.health)
+
+```
+
+### It's Not All Animals and Fruits
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Classes like <code>Animal</code> and <code>Fruit</code> make it easy to understand the concepts of classes and instances, but you probably won't see many zebras or lemons in real-world programs.</p>
+<p>However, classes and objects are often used to model real-world objects. The code in the editor is a more realistic demonstration of the kind of classes and objects you might find in commercial software. Here we have a basic <code>ShoppingCart</code> class for creating shopping cart objects for website customers; though basic, it's similar to what you'd see in a real program.</p>
+</div>
+
+###### TASK
+<p>Create an instance of <code>ShoppingCart</code> called <code>my_cart</code>. Initialize it with any values you like, then use the <code>add_item</code> method to add an item to your cart.</p>
+
+```python
+class ShoppingCart(object):
+  """Creates shopping cart objects
+  for users of our fine website."""
+  items_in_cart = {}
+  def __init__(self, customer_name):
+    self.customer_name = customer_name
+
+  def add_item(self, product, price):
+    """Add product to the cart."""
+    if not product in self.items_in_cart:
+      self.items_in_cart[product] = price
+      print product + " added."
+    else:
+      print product + " is already in the cart."
+
+  def remove_item(self, product):
+    """Remove product from the cart."""
+    if product in self.items_in_cart:
+      del self.items_in_cart[product]
+      print product + " removed."
+    else:
+      print product + " is not in the cart."
+      
+my_cart = ShoppingCart("Eric")
+my_cart.add_item("Apples", 5)
+    
+#Output:
+Apples added
+
+```
+
+### Warning: Here Be Dragons
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p><em>Inheritance</em> is a tricky concept, so let's go through it step by step.</p>
+<p>Inheritance is the process by which one class takes on the attributes and methods of another, and it's used to express an <em>is-a</em> relationship. For example, a Panda is a bear, so a Panda class could inherit from a Bear class. However, a Toyota is not a Tractor, so it shouldn't inherit from the Tractor class (even if they have a lot of attributes and methods in common). Instead, both Toyota and Tractor could ultimately inherit from the same Vehicle class.</p>
+</div>
+
+###### TASK
+<p>Check out the code in the editor. We've defined a class, <code>Customer</code>, as well as a <code>ReturningCustomer</code> class that inherits from <code>Customer</code>. Note that we don't define the <code>display_cart</code> method in the body of <code>ReturningCustomer</code>, but it will still have access to that method via inheritance. Click Run to see for yourself!</p>
+
+```python
+class Customer(object):
+  """Produces objects that represent customers."""
+  def __init__(self, customer_id):
+    self.customer_id = customer_id
+
+  def display_cart(self):
+    print "I'm a string that stands in for the contents of your shopping cart!"
+
+class ReturningCustomer(Customer):
+  """For customers of the repeat variety."""
+  def display_order_history(self):
+    print "I'm a string that stands in for your order history!"
+
+monty_python = ReturningCustomer("ID: 12345")
+monty_python.display_cart()
+monty_python.display_order_history()
+
+#output
+I'm a string that stands in for the contents of your shopping cart!
+I'm a string that stands in for your order history!
+```
+
+### Inheritance Syntax
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>In Python, inheritance works like this:</p>
+<pre><code class="lang-py"><span language="py" class="CodeBlock__3-kebd7REMI5aXkez6K-B wrap__yxnEyEmMpigk6-3_Wvbzo defaults__1l9bk0Z91YqvzRByZKNgHF cc__1zsV8w8Rj_vs2ayVLJ-2x undefined" data-reactroot=""><div class="CodeMirror"><span class="cm-keyword">class</span> <span class="cm-def">DerivedClass</span>(<span class="cm-variable">BaseClass</span>)<!-- -->:<!-- -->
+<!-- -->  <span class="cm-comment"># code goes here</span></div></span>
+</code></pre>
+<p>where <code>DerivedClass</code> is the new class you're making and <code>BaseClass</code> is the class from which that new class inherits.</p>
+</div>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>On lines 1-4, we've created a class named <code>Shape</code>.</p>
+<ul>
+<li>Create your own class, <code>Triangle</code>, that inherits from <code>Shape</code>, like this:<pre><code class="lang-py"><span language="py" class="CodeBlock__3-kebd7REMI5aXkez6K-B wrap__yxnEyEmMpigk6-3_Wvbzo defaults__1l9bk0Z91YqvzRByZKNgHF cc__1zsV8w8Rj_vs2ayVLJ-2x undefined" data-reactroot=""><div class="CodeMirror"><span class="cm-keyword">class</span> <span class="cm-def">Triangle</span>(<span class="cm-variable">Shape</span>)<!-- -->:<!-- -->
+<span class="cm-comment"># code goes here</span></div></span>
+</code></pre>
+</li>
+<li>Inside the <code>Triangle</code> class, write an <code>__init__()</code> function that takes four arguments: <code>self</code>, <code>side1</code>, <code>side2</code>, and <code>side3</code>. </li>
+<li>Inside the <code>__init__()</code> function, set <code>self.side1 = side1</code>, <code>self.side2 = side2</code>, and <code>self.side3 = side3</code>.</li>
+</ul>
+<p>Click "Stuck? Get a hint!" for an example.</p>
+</div>
+
+```python
+class Shape(object):
+  """Makes shapes!"""
+  def __init__(self, number_of_sides):
+    self.number_of_sides = number_of_sides
+
+# Add your Triangle class below!
+class Triangle(Shape):
+  def __init__(self, side1, side2, side3):
+    self.side1 = side1
+    self.side2 = side2
+    self.side3 = side3
+    
+```
+
+### Override!
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Sometimes you'll want one class that inherits from another to not only take on the methods and attributes of its parent, but to <em>override</em> one or more of them.</p>
+<pre><code class="lang-py"><span language="py" class="CodeBlock__3-kebd7REMI5aXkez6K-B wrap__yxnEyEmMpigk6-3_Wvbzo defaults__1l9bk0Z91YqvzRByZKNgHF cc__1zsV8w8Rj_vs2ayVLJ-2x undefined" data-reactroot=""><div class="CodeMirror"><span class="cm-keyword">class</span> <span class="cm-def">Employee</span>(<span class="cm-builtin">object</span>)<!-- -->:<!-- -->
+<!-- -->  <span class="cm-keyword">def</span> <span class="cm-def">__init__</span>(<span class="cm-variable-2">self</span>,<!-- --> <span class="cm-variable">name</span>)<!-- -->:<!-- -->
+<!-- -->    <span class="cm-variable-2">self</span>.<span class="cm-property">name</span> <span class="cm-operator">=</span> <span class="cm-variable">name</span>
+<!-- -->  <span class="cm-keyword">def</span> <span class="cm-def">greet</span>(<span class="cm-variable-2">self</span>,<!-- --> <span class="cm-variable">other</span>)<!-- -->:<!-- -->
+<!-- -->    <span class="cm-builtin">print</span> <span class="cm-string">"Hello, %s"</span> <span class="cm-operator">%</span> <span class="cm-variable">other</span>.<span class="cm-property">name</span>
+<!-- -->
+<span class="cm-keyword">class</span> <span class="cm-def">CEO</span>(<span class="cm-variable">Employee</span>)<!-- -->:<!-- -->
+<!-- -->  <span class="cm-keyword">def</span> <span class="cm-def">greet</span>(<span class="cm-variable-2">self</span>,<!-- --> <span class="cm-variable">other</span>)<!-- -->:<!-- -->
+<!-- -->    <span class="cm-builtin">print</span> <span class="cm-string">"Get back to work, %s!"</span> <span class="cm-operator">%</span> <span class="cm-variable">other</span>.<span class="cm-property">name</span>
+<!-- -->
+<span class="cm-variable">ceo</span> <span class="cm-operator">=</span> <span class="cm-variable">CEO</span>(<span class="cm-string">"Emily"</span>)<!-- -->
+<span class="cm-variable">emp</span> <span class="cm-operator">=</span> <span class="cm-variable">Employee</span>(<span class="cm-string">"Steve"</span>)<!-- -->
+<span class="cm-variable">emp</span>.<span class="cm-property">greet</span>(<span class="cm-variable">ceo</span>)<!-- -->
+<span class="cm-comment"># Hello, Emily</span>
+<span class="cm-variable">ceo</span>.<span class="cm-property">greet</span>(<span class="cm-variable">emp</span>)<!-- -->
+<span class="cm-comment"># Get back to work, Steve!</span></div></span>
+</code></pre>
+<p>Rather than have a separate <code>greet_underling</code> method for our CEO, we override (or re-create) the <code>greet</code> method on top of the base <code>Employee.greet</code> method. This way, we don't need to know what type of Employee we have before we greet another Employee.</p>
+</div>
+
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Create a new class, <code>PartTimeEmployee</code>, that inherits from <code>Employee</code>.</p>
+<p>Give your derived class a <code>calculate_wage</code> method that overrides <code>Employee</code>'s. It should take <code>self</code> and <code>hours</code> as arguments.</p>
+<p>Because <code>PartTimeEmployee.calculate_wage</code> overrides <code>Employee.calculate_wage</code>, it still needs to set <code>self.hours = hours</code>.</p>
+<p>It should <code>return</code> the part-time employee's number of <code>hours</code> worked multiplied by <code>12.00</code> (that is, they get $12.00 per hour instead of $20.00).</p>
+</div>
+
+```python
+class Employee(object):
+  """Models real-life employees!"""
+  def __init__(self, employee_name):
+    self.employee_name = employee_name
+
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 20.00
+
+# Add your code below!
+class PartTimeEmployee(Employee):
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 12.00
+```
+
+### This Looks Like a Job For...
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>On the flip side, sometimes you'll be working with a derived class (or <em>subclass</em>) and realize that you've overwritten a method or attribute defined in that class' base class (also called a <em>parent</em> or <em>superclass</em>) that you actually need. Have no fear! You can directly access the attributes or methods of a superclass with Python's built-in <code>super</code> call.</p>
+<p>The syntax looks like this:</p>
+<pre><code class="lang-py"><span language="py" class="CodeBlock__3-kebd7REMI5aXkez6K-B wrap__yxnEyEmMpigk6-3_Wvbzo defaults__1l9bk0Z91YqvzRByZKNgHF cc__1zsV8w8Rj_vs2ayVLJ-2x undefined" data-reactroot=""><div class="CodeMirror"><span class="cm-keyword">class</span> <span class="cm-def">Derived</span>(<span class="cm-variable">Base</span>)<!-- -->:<!-- -->
+<!-- -->  <span class="cm-keyword">def</span> <span class="cm-def">m</span>(<span class="cm-variable-2">self</span>)<!-- -->:<!-- -->
+<!-- -->    <span class="cm-keyword">return</span> <span class="cm-builtin">super</span>(<span class="cm-variable">Derived</span>,<!-- --> <span class="cm-variable-2">self</span>)<!-- -->.<span class="cm-property">m</span>(<!-- -->)</div></span>
+</code></pre>
+<p>Where <code>m()</code> is a method from the base class.</p>
+</div>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>First, inside your <code>PartTimeEmployee</code> class:</p>
+<ul>
+<li>Add a new method called <code>full_time_wage</code> with the arguments <code>self</code> and <code>hours</code>.</li>
+<li>That method should <code>return</code> the result of a <code>super</code> call to the <code>calculate_wage</code> method of <code>PartTimeEmployee</code>'s parent class. Use the example above for help.</li>
+</ul>
+<p>Then, after your class:</p>
+<ul>
+<li>Create an instance of the <code>PartTimeEmployee</code> class called <code>milton</code>. Don't forget to give it a name.</li>
+<li>Finally, <code>print</code> out the result of calling his <code>full_time_wage</code> method. You should see his wage printed out at $20.00 per hour! (That is, for <code>10</code> hours, the result should be <code>200.00</code>.)</li>
+</ul>
+</div>
+
+```python
+
+```
