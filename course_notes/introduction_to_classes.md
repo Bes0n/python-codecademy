@@ -447,5 +447,128 @@ class PartTimeEmployee(Employee):
 </div>
 
 ```python
+class Employee(object):
+  """Models real-life employees!"""
+  def __init__(self, employee_name):
+    self.employee_name = employee_name
 
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 20.00
+
+# Add your code below!
+class PartTimeEmployee(Employee):
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 12.00
+  
+  def full_time_wage(self, hours):
+    return super(PartTimeEmployee, self).calculate_wage(hours)
+
+milton = PartTimeEmployee('Milton')
+print milton.full_time_wage(10)
+
+```
+
+### Class Basics
+First things first: let's create a class to work with.
+
+###### TASK
+<p>Create a class, <code>Triangle</code>. Its <code>__init__()</code> method should take <code>self</code>, <code>angle1</code>, <code>angle2</code>, and <code>angle3</code> as arguments. Make sure to set these appropriately in the body of the <code>__init__()</code> method (see the Hint for more).</p>
+
+```python
+class Triangle(object):
+  def __init__(self,angle1,angle2,angle3):
+    self.angle1 = angle1
+    self.angle2 = angle2
+    self.angle3 = angle3
+```
+
+### Class It Up
+Great! Now let's add a member variable and a method to our class.
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Inside the <code>Triangle</code> class:</p>
+<ul>
+<li>Create a variable named <code>number_of_sides</code> and set it equal to <code>3</code>.</li>
+<li>Create a method named <code>check_angles</code>. The sum of a triangle's three angles should return <code>True</code> if the sum of <code>self.angle1</code>, <code>self.angle2</code>, and <code>self.angle3</code> is equal <code>180</code>, and <code>False</code> otherwise. </li>
+</ul>
+</div>
+
+```python
+class Triangle(object):
+  number_of_sides = 3
+  def __init__(self,angle1,angle2,angle3):
+    self.angle1 = angle1
+    self.angle2 = angle2
+    self.angle3 = angle3
+  def check_angles(self):
+    if self.angle1 + self.angle2 + self.angle3 == 180:
+      return True
+    else:
+      return False
+```
+
+### Instantiate an Object
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Let's go ahead and create an instance of our <code>Triangle</code> class.</p>
+</div>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Create a variable named <code>my_triangle</code> and set it equal to a new instance of your <code>Triangle</code> class. Pass it three angles that sum to 180 (e.g. 90, 30, 60).</p>
+<p>Print out <code>my_triangle.number_of_sides</code></p>
+<p>Print out <code>my_triangle.check_angles()</code></p>
+</div>
+
+```python
+class Triangle(object):
+  number_of_sides = 3
+  def __init__(self,angle1,angle2,angle3):
+    self.angle1 = angle1
+    self.angle2 = angle2
+    self.angle3 = angle3
+  def check_angles(self):
+    if self.angle1 + self.angle2 + self.angle3 == 180:
+      return True
+    else:
+      return False
+    
+my_triangle = Triangle(90,30,60)
+
+print(my_triangle.number_of_sides)
+print(my_triangle.check_angles())
+
+#output
+Number of sides = 3
+Number of angles = True 
+```
+
+### Inheritance
+<p>Finally, let's create an <code>Equilateral</code> class that inherits from our <code>Triangle</code> class. (An equilateral triangle is a triangle whose angles are all 60˚, which also means that its three sides are equal in length.)</p>
+
+###### TASK
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_"><p>Create a class named <code>Equilateral</code> that inherits from <code>Triangle</code>. </p>
+<p>Inside <code>Equilateral</code>, create a member variable named <code>angle</code> and set it equal to <code>60</code>. </p>
+<p>Create an <code>__init__()</code> function with only the parameter <code>self</code>, and set <code>self.angle1</code>, <code>self.angle2</code>, and <code>self.angle3</code> equal to <code>self.angle</code> (since an equilateral triangle's angles will always be  60˚).</p>
+</div>
+
+```python
+class Triangle(object):
+  number_of_sides = 3
+  def __init__(self, angle1, angle2, angle3):
+    self.angle1 = angle1
+    self.angle2 = angle2
+    self.angle3 = angle3
+    
+  def check_angles(self):
+    if (self.angle1 + self.angle2 + self.angle3) == 180:
+      return True
+    else:
+      return False
+    
+class Equilateral(Triangle):
+  angle = 60
+  def __init__(self):
+    self.angle1 = self.angle
+    self.angle2 = self.angle
+    self.angle3 = self.angle
 ```
