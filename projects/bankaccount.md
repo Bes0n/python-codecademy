@@ -66,7 +66,7 @@
 </ul>
 <p>Feel free to add or expand the functionality of the <code>BankAccount</code> class. Happy coding!</p>
 </div></div></article><article class="fit-full fcn-task"><div class="flex__1yBdRTf7dKVh6F1j8s6UAN body__2YAqSw_nsALLlzqgZCt7-f"><div class=""><div data-cue="discovery-checklist" class="fcn-task__check centeredCheckbox__3Bvh4aldiBBK3CertU7Cnq"></div></div><div class="item__3uOKmIw4s4QfZtP8lM6nmj"><span class="fcn-task__number" data-testid="task-26">26<!-- -->.</span></div><div class="theme__22QeW-d-YRjfwg7z9oiZH_ narrativeMarkdown__1pqyNDZ_zljr-gC8Q1pur9"><p>Click here for a video walkthrough from our experts to help you check your work!</p>
-<div class="youtubeVideoWrapper__1eR6fAaYYVHRgmBvm_fUcb"><iframe width="300" height="200" src="https://www.youtube.com/embed/vr8iYUt8QAU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div></div></div></article></div></div>
+![walkthrough](https://www.youtube.com/embed/vr8iYUt8QAU)
 
 
 ```python
