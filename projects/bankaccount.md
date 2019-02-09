@@ -67,3 +67,38 @@
 <p>Feel free to add or expand the functionality of the <code>BankAccount</code> class. Happy coding!</p>
 </div></div></article><article class="fit-full fcn-task"><div class="flex__1yBdRTf7dKVh6F1j8s6UAN body__2YAqSw_nsALLlzqgZCt7-f"><div class=""><div data-cue="discovery-checklist" class="fcn-task__check centeredCheckbox__3Bvh4aldiBBK3CertU7Cnq"></div></div><div class="item__3uOKmIw4s4QfZtP8lM6nmj"><span class="fcn-task__number" data-testid="task-26">26<!-- -->.</span></div><div class="theme__22QeW-d-YRjfwg7z9oiZH_ narrativeMarkdown__1pqyNDZ_zljr-gC8Q1pur9"><p>Click here for a video walkthrough from our experts to help you check your work!</p>
 <div class="youtubeVideoWrapper__1eR6fAaYYVHRgmBvm_fUcb"><iframe width="300" height="200" src="https://www.youtube.com/embed/vr8iYUt8QAU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div></div></div></article></div></div>
+
+
+```python
+class BankAccount(object):
+  balance = 0
+  def __init__(self,name):
+    self.name = name
+  def __repr__(self):
+    return "%s's account has a balance $%.2f" % (self.name, self.balance)
+  def show_balance(self):
+    print "Total balance is $%.2f" % (self.balance)
+  def deposit(self,amount):
+    if amount <= 0:
+      print("Amount must be positive")
+      return 
+    else:
+      print("Amount to store in deposit: $%.2f" % amount)
+      self.balance += amount
+      self.show_balance()
+  def withdraw(self,amount):
+    if amount > self.balance:
+      print("There is no enough money on your account")
+    else:
+      print("Withdrawing: $%.2f" % amount)
+      self.balance -= amount
+      self.show_balance()
+      
+      
+my_account = BankAccount("Ilgar")
+print(my_account)
+my_account.show_balance()
+my_account.deposit(2000)
+my_account.withdraw(1000)
+print(my_account)
+```
