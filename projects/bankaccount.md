@@ -11,3 +11,17 @@
 <p>Let's begin!</p>
 <p> If you get stuck during this project, check out the <strong>project walkthrough video</strong> which can be found at the bottom of the page after the final step of the project.</p>
 </div>
+
+###### TASK
+<p>On line 1, create a <code>BankAccount</code> class.</p>
+
+<p>Next, add a <a href="https://www.codecademy.com/en/courses/learn-python/lessons/introduction-to-classes/exercises/class-scope" target="_blank">member variable</a> called <code>balance</code> and set it equal to <code>0</code>. This will represent the starting balance of any new <code>BankAccount</code> object.</p>
+
+<p>Add the <code>__init__()</code> method that takes the default <code>self</code> parameter and an additional <code>name</code> parameter. Later, we'll use the <code>name</code> parameter to specify who the account belongs to.</p>
+
+<p>Inside the <code>__init__()</code> method, assign the <code>self.name</code> property to the <code>name</code> parameter that the method accepts.</p>
+
+<div class="theme__22QeW-d-YRjfwg7z9oiZH_ narrativeMarkdown__1pqyNDZ_zljr-gC8Q1pur9"><p>Well done. This method will make sure that whatever name the user types (when creating an object of this class) will be attributed to that object.</p>
+<p>Next, add a <code>__repr__()</code> method that takes the default <code>self</code> parameter.</p>
+</div>
+
